@@ -2,236 +2,145 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
-  ArrowUpRight,
-  BarChart3,
-  BrainCircuit,
-  BriefcaseBusiness,
-  ChevronDown,
-  Database,
-  ExternalLink,
   Mail,
   MapPin,
-  Sparkles,
+  ArrowRight,
+  BarChart3,
+  Database,
+  BrainCircuit,
+  BriefcaseBusiness,
+  ExternalLink,
 } from "lucide-react";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7 },
-  },
-};
-
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const skills = [
-  "Python",
-  "SQL",
-  "Machine Learning",
-  "XGBoost",
-  "Time Series Forecasting",
-  "Excel Modeling",
-  "Power BI",
-  "Tableau",
-  "R",
-  "Decision Systems",
-];
-
-const metrics = [
-  "R² = 0.874",
-  "89% Shift Gap Identified",
-  "ML + SQL + Decision Systems",
-];
 
 export default function GarvitPortfolio() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
-      
-      {/* Background Glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute left-10 top-[500px] h-[300px] w-[300px] rounded-full bg-blue-500/10 blur-3xl" />
-        <div className="absolute bottom-0 right-10 h-[300px] w-[300px] rounded-full bg-purple-500/10 blur-3xl" />
-      </div>
+    <div className="bg-black text-white min-h-screen font-sans">
+
+      {/* NAVBAR */}
+      <nav className="flex justify-between items-center px-8 py-4 border-b border-gray-800">
+        <h1 className="text-xl font-semibold">Garvit Mittal</h1>
+        <div className="space-x-6 text-sm">
+          <a href="#about" className="hover:text-gray-400">About</a>
+          <a href="#experience" className="hover:text-gray-400">Experience</a>
+          <a href="#projects" className="hover:text-gray-400">Projects</a>
+          <a href="#contact" className="hover:text-gray-400">Contact</a>
+        </div>
+      </nav>
 
       {/* HERO */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
+      <section className="px-8 py-20 max-w-5xl mx-auto">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          className="text-5xl font-bold leading-tight"
         >
-          <motion.div
-            variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-2 border border-white/10 px-4 py-2 rounded-full text-sm text-gray-300"
-          >
-            <Sparkles className="h-4 w-4 text-cyan-400" />
-            Business Analytics • AI • Decision Systems
-          </motion.div>
+          Business Analytics & AI Student
+          <br />
+          Building Data-Driven Systems
+        </motion.h1>
 
-          <motion.h1
-            variants={fadeUp}
-            className="text-5xl md:text-7xl font-bold mb-6"
-          >
-            Garvit Mittal
-          </motion.h1>
+        <p className="mt-6 text-gray-400 max-w-xl">
+          I'm Garvit Mittal, currently pursuing my Master’s in Business Analytics & AI at UT Dallas. 
+          I specialize in combining business strategy with data science to build real-world decision systems.
+        </p>
 
-          <motion.p
-            variants={fadeUp}
-            className="text-gray-300 max-w-2xl mx-auto mb-6"
-          >
-            I build data-driven systems that replace intuition with measurable
-            decision-making across operations and forecasting.
-          </motion.p>
-
-          {/* Metrics */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-wrap justify-center gap-4 mb-8"
-          >
-            {metrics.map((metric) => (
-              <div
-                key={metric}
-                className="border border-gray-700 px-4 py-2 rounded-lg text-sm hover:scale-105 transition"
-              >
-                {metric}
-              </div>
-            ))}
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <a
-              href="https://github.com/garvit-mittal04/warehouse-decision-system"
-              target="_blank"
-              className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg hover:scale-105 transition"
-            >
-              View Project <ArrowUpRight className="h-4 w-4" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/garvit-mittal-81171632a/"
-              target="_blank"
-              className="flex items-center gap-2 border border-gray-600 px-6 py-3 rounded-lg hover:scale-105 transition"
-            >
-              LinkedIn <ExternalLink className="h-4 w-4" />
-            </a>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="absolute bottom-10 text-gray-500"
-        >
-          <ChevronDown />
-        </motion.div>
+        <div className="flex gap-4 mt-8">
+          <a href="#projects" className="bg-white text-black px-6 py-3 rounded-xl flex items-center gap-2">
+            View Projects <ArrowRight size={16}/>
+          </a>
+          <a href="#contact" className="border border-gray-600 px-6 py-3 rounded-xl">
+            Contact Me
+          </a>
+        </div>
       </section>
 
       {/* ABOUT */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeUp}
-        className="max-w-5xl mx-auto px-6 mb-24"
-      >
-        <h2 className="text-2xl font-semibold mb-6">About</h2>
-        <p className="text-gray-400">
-          I’m a Master’s student in Business Analytics & AI at UT Dallas,
-          focused on building systems that convert raw operational data into
-          strategic decisions using ML, SQL, and analytics.
+      <section id="about" className="px-8 py-20 max-w-5xl mx-auto border-t border-gray-800">
+        <h2 className="text-3xl font-semibold mb-6">About Me</h2>
+
+        <p className="text-gray-400 leading-relaxed">
+          I am a Business Analytics & AI graduate student at the University of Texas at Dallas, 
+          with a strong foundation in finance and data analytics. My work focuses on building 
+          end-to-end analytical systems — from data engineering and SQL architecture to machine 
+          learning models and decision dashboards.
+          <br /><br />
+          I have hands-on experience in predictive modeling, forecasting, and optimization, and 
+          I aim to leverage data to solve complex business problems in operations, finance, and supply chain.
         </p>
-      </motion.section>
 
-      {/* PROJECT */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        variants={staggerContainer}
-        className="max-w-5xl mx-auto px-6 mb-24"
-      >
-        <motion.h2 variants={fadeUp} className="text-2xl mb-6">
-          Featured Project
-        </motion.h2>
-
-        <motion.div
-          variants={fadeUp}
-          whileHover={{ scale: 1.02 }}
-          className="border border-gray-800 p-8 rounded-xl"
-        >
-          <h3 className="text-xl mb-4">
-            ML-Powered Warehouse Decision System
-          </h3>
-
-          <p className="text-gray-400 mb-6">
-            End-to-end system combining forecasting, ML models,
-            and decision logic to optimize warehouse operations.
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold mb-2">Education</h3>
+          <p className="text-gray-400">
+            🎓 MS in Business Analytics & Artificial Intelligence — University of Texas at Dallas (2025–2027)
+            <br />
+            🎓 BBA in Finance — Christ University, India
           </p>
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 gap-4 text-sm mb-6">
-            <div className="flex gap-2">
-              <BarChart3 /> Forecasting
-            </div>
-            <div className="flex gap-2">
-              <Database /> SQL Modeling
-            </div>
-            <div className="flex gap-2">
-              <BrainCircuit /> ML Models
-            </div>
-            <div className="flex gap-2">
-              <BriefcaseBusiness /> Decision Engine
-            </div>
+      {/* EXPERIENCE */}
+      <section id="experience" className="px-8 py-20 max-w-5xl mx-auto border-t border-gray-800">
+        <h2 className="text-3xl font-semibold mb-6">Experience</h2>
+
+        <div className="space-y-6">
+
+          <div className="p-6 border border-gray-800 rounded-xl">
+            <h3 className="text-xl font-semibold">Operations & Business Analytics Intern</h3>
+            <p className="text-gray-400">Harsiddhi Foods Pvt. Ltd.</p>
+            <ul className="mt-3 text-gray-400 list-disc list-inside">
+              <li>Improved gross margins by 8–12% through pricing and cost optimization</li>
+              <li>Built demand forecasting models increasing planning accuracy by 15%</li>
+              <li>Developed financial models for contribution and cost analysis</li>
+            </ul>
           </div>
 
-          <a
-            href="https://github.com/garvit-mittal04/warehouse-decision-system"
-            target="_blank"
-            className="text-cyan-400 flex items-center gap-2"
-          >
-            View Project <ArrowRight />
-          </a>
-        </motion.div>
-      </motion.section>
+          <div className="p-6 border border-gray-800 rounded-xl">
+            <h3 className="text-xl font-semibold">Audit & Analytics Intern</h3>
+            <p className="text-gray-400">Dipankar Gupta & Co.</p>
+            <ul className="mt-3 text-gray-400 list-disc list-inside">
+              <li>Performed financial audits and analytical reviews</li>
+              <li>Worked on financial statements and compliance reporting</li>
+            </ul>
+          </div>
 
-      {/* SKILLS */}
-      <section className="max-w-5xl mx-auto px-6 mb-24">
-        <h2 className="text-2xl mb-6">Skills</h2>
-        <div className="flex flex-wrap gap-3">
-          {skills.map((s) => (
-            <span key={s} className="border px-3 py-1 rounded-lg text-sm">
-              {s}
-            </span>
-          ))}
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="px-8 py-20 max-w-5xl mx-auto border-t border-gray-800">
+        <h2 className="text-3xl font-semibold mb-6">Projects</h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+
+          <div className="p-6 border border-gray-800 rounded-xl">
+            <BarChart3 className="mb-4"/>
+            <h3 className="text-xl font-semibold">Warehouse Decision System</h3>
+            <p className="text-gray-400 mt-2">
+              ML-powered system for demand forecasting, risk detection, and throughput prediction.
+            </p>
+            <a 
+              href="https://github.com/garvit-mittal04/warehouse-decision-system"
+              target="_blank"
+              className="flex items-center gap-2 mt-4 text-sm text-gray-300"
+            >
+              View Project <ExternalLink size={14}/>
+            </a>
+          </div>
+
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="text-center pb-16">
-        <h2 className="text-2xl mb-4">Contact</h2>
-        <p className="text-gray-400 mb-6">
-          Open to Summer 2026 internships
-        </p>
+      <section id="contact" className="px-8 py-20 max-w-5xl mx-auto border-t border-gray-800">
+        <h2 className="text-3xl font-semibold mb-6">Contact</h2>
 
-        <div className="flex justify-center gap-6 flex-wrap">
-          <span className="flex gap-2">
-            <Mail /> garvitm534@gmail.com
-          </span>
-          <span className="flex gap-2">
-            <MapPin /> Dallas, TX
-          </span>
+        <div className="space-y-3 text-gray-400">
+          <p className="flex items-center gap-2">
+            <Mail size={16}/> garvitm534@gmail.com
+          </p>
+          <p className="flex items-center gap-2">
+            <MapPin size={16}/> Dallas, Texas
+          </p>
         </div>
       </section>
 
