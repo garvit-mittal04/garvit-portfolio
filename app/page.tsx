@@ -73,7 +73,7 @@ const flagshipProject = {
   subtitle:
     "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit",
   description:
-    "An end-to-end analytics system built to improve warehouse staffing, shipment flow, disruption monitoring, and throughput planning using forecasting, machine learning, SQL, and business decision logic.",
+    "A business-focused analytics system designed to improve warehouse staffing, shipment flow, disruption monitoring, and throughput planning through forecasting, machine learning, SQL architecture, and decision support logic.",
   highlights: [
     { label: "Supply chain records analyzed", value: "53,000+" },
     { label: "Throughput model performance", value: "R² = 0.874" },
@@ -81,11 +81,11 @@ const flagshipProject = {
     { label: "Statistical validation", value: "6 tests in R" },
   ],
   bullets: [
-    "Built a realistic warehouse decision workflow covering demand forecasting, disruption risk classification, throughput prediction, and decision support.",
-    "Developed models using Prophet, XGBoost, and Gradient Boosting to connect operational data with staffing and planning decisions.",
+    "Built a realistic warehouse decision workflow covering demand forecasting, disruption risk classification, throughput prediction, and scenario-based planning support.",
+    "Developed models using Prophet, XGBoost, and Gradient Boosting to connect operational data with staffing, planning, and flow-management decisions.",
     "Designed a structured SQL layer and analytical queries to make shipment, disruption, and throughput analysis reproducible and business-ready.",
     "Applied SHAP explainability to identify operational cost drivers, including an estimated $2,286 cost per disruption hour.",
-    "Deployed the work as a live Streamlit application to make model outputs usable for scenario-based decision-making.",
+    "Deployed the work as a live Streamlit application so model outputs could be used in a decision-facing interface rather than a static notebook.",
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
   liveApp: "https://warehouse-garvit.streamlit.app",
@@ -94,22 +94,22 @@ const flagshipProject = {
 const projectData = [
   {
     icon: <LineChart size={22} />,
-    title: "Revenue Prediction & Customer Segmentation",
+    title: "Customer Revenue Forecasting & Segmentation Model",
     subtitle: "Predictive Analytics · Regression · Classification",
     description:
       "Built forecasting and segmentation workflows to support revenue planning, customer prioritization, and performance improvement decisions.",
     bullets: [
       "Designed regression and classification workflows for revenue forecasting and customer grouping.",
       "Connected model outputs to business actions instead of stopping at technical metrics.",
-      "Framed the work around growth, profitability, and decision support.",
+      "Framed the work around growth, prioritization, and decision support.",
     ],
   },
   {
     icon: <Database size={22} />,
-    title: "SQL Database Design & KPI Dashboard",
+    title: "Operational KPI Reporting System",
     subtitle: "SQL · Power BI · DAX · Reporting Automation",
     description:
-      "Designed a structured relational database and KPI dashboard layer to reduce manual reporting effort and improve visibility into performance trends.",
+      "Designed a structured relational database and KPI dashboard layer to reduce manual reporting effort and improve visibility into operational and performance trends.",
     bullets: [
       "Wrote SQL queries using JOINs, CTEs, and window functions for operational and performance analysis.",
       "Built KPI dashboards in Power BI with DAX to track multi-period trends and business performance.",
@@ -118,10 +118,10 @@ const projectData = [
   },
   {
     icon: <BarChart3 size={22} />,
-    title: "Pricing & Inventory Analytics",
+    title: "Retail Pricing & Inventory Insights Engine",
     subtitle: "Retail Analytics · Forecasting · SKU Performance",
     description:
-      "Worked on pricing, demand, and inventory analysis use cases to support SKU-level decisions and operating visibility.",
+      "Worked on pricing, demand, and inventory analysis use cases to support SKU-level decisions, assortment visibility, and inventory planning.",
     bullets: [
       "Built analysis around sales trends, product mix, and inventory planning.",
       "Supported pricing and assortment decisions using structured KPI views.",
@@ -363,10 +363,9 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.7 }}
               className="mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg"
             >
-              I’m Garvit Mittal, a Business Analytics & AI graduate student with
-              experience in forecasting, reporting automation, operational analysis,
-              and business-facing decision support. I build analytics systems that help
-              teams improve planning, visibility, and execution.
+              I’m Garvit Mittal, a Business Analytics & AI graduate student focused on
+              building forecasting, reporting, and decision-support systems for
+              operations, supply chain, and business performance.
             </motion.p>
 
             <motion.p
@@ -375,9 +374,9 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.78 }}
               className="mt-5 max-w-3xl text-base leading-8 text-gray-300"
             >
-              My work spans warehouse analytics, pricing and inventory analysis,
-              KPI dashboards, and forecasting models built for real business use,
-              not isolated technical demos.
+              My strongest work combines SQL, Python, BI tools, and machine learning
+              to solve real planning and operational problems, not just create
+              technical demos.
             </motion.p>
 
             <motion.div
@@ -394,20 +393,20 @@ export default function GarvitPortfolio() {
               </a>
 
               <a
-                href="/RESUME.pdf"
-                download
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
-              >
-                <Download size={16} /> Download Resume
-              </a>
-
-              <a
                 href={flagshipProject.liveApp}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
               >
-                <Globe size={16} /> Live App
+                <Globe size={16} /> Launch Live App
+              </a>
+
+              <a
+                href="/RESUME.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
+              >
+                <Download size={16} /> Download Resume
               </a>
             </motion.div>
 
@@ -480,8 +479,12 @@ export default function GarvitPortfolio() {
       >
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
-            <p className="text-sm uppercase tracking-[0.22em] text-gray-500">About</p>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">How I work</h2>
+            <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
+              About
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+              What I bring
+            </h2>
           </div>
 
           <div className="space-y-5 leading-8 text-gray-300">
@@ -618,7 +621,9 @@ export default function GarvitPortfolio() {
             </div>
             <div>
               <h3 className="text-2xl font-semibold">{flagshipProject.title}</h3>
-              <p className="mt-2 text-sm text-gray-400">{flagshipProject.subtitle}</p>
+              <p className="mt-2 text-sm text-gray-400">
+                {flagshipProject.subtitle}
+              </p>
             </div>
           </div>
 
@@ -636,6 +641,52 @@ export default function GarvitPortfolio() {
                 <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
+            <div className="grid gap-5 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">
+                  Problem
+                </p>
+                <p className="mt-3 leading-7 text-gray-300">
+                  Warehouse teams often make staffing, flow, and disruption decisions
+                  reactively, with limited forecasting visibility and weak operational
+                  planning support.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">
+                  Approach
+                </p>
+                <p className="mt-3 leading-7 text-gray-300">
+                  Combined SQL, forecasting, classification, throughput prediction,
+                  and explainability into a decision-oriented analytics workflow.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">
+                  Outcome
+                </p>
+                <p className="mt-3 leading-7 text-gray-300">
+                  Produced a usable warehouse planning system with measurable model
+                  performance, cost insights, and a live app interface for scenario
+                  evaluation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
+            <p className="text-sm uppercase tracking-[0.2em] text-gray-500">
+              Project visual placeholder
+            </p>
+            <div className="mt-4 flex min-h-[220px] items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] text-center text-sm leading-7 text-gray-500">
+              Add a screenshot of your Streamlit app, dashboard, or architecture
+              diagram here to make this project instantly more credible.
+            </div>
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
