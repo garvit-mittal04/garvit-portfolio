@@ -209,7 +209,7 @@ const educationData = [
       "Focused on business analytics, machine learning, operations, decision support, and data-driven problem solving.",
   },
   {
-    degree: "Bachelor in Business Administration Hons. - Finance",
+    degree: "Bachelors of Business Administration Hons. - Finance",
     school: "Christ University, Bangalore",
     // NOTE: Replace "2022" with your actual graduation year.
     period: "May 2025",
