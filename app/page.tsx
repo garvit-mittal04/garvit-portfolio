@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Download,
-  ExternalLink,
   Mail,
   MapPin,
   Menu,
@@ -23,6 +22,7 @@ import {
   Boxes,
   BriefcaseBusiness,
   BrainCircuit,
+  ExternalLink,
 } from "lucide-react";
 
 const navLinks = [
@@ -40,18 +40,18 @@ const experienceData = [
     company: "JityAI",
     period: "Jan 2025 - Aug 2025",
     points: [
-      "Performed SKU-level pricing and demand analysis for retail-focused use cases, building forecasting workflows and KPI views that supported inventory allocation and product-mix decisions.",
+      "Performed SKU-level pricing, demand, and assortment analysis for retail use cases, building KPI views and forecasting workflows that supported inventory allocation and product-mix decisions.",
       "Developed regression and time-series models on sales velocity, margin, and assortment data, improving forecast accuracy by 15–20% through feature engineering and iterative refinement.",
-      "Translated analytical outputs into structured business reports and decision views for stakeholders, helping standardize reporting workflows around pricing, inventory, and roadmap prioritization.",
+      "Translated analytical outputs into structured business reporting for stakeholders, helping standardize decision workflows across pricing, inventory, and roadmap prioritization.",
     ],
   },
   {
     role: "Operations & Business Analyst",
     company: "Harsiddhi Foods Pvt. Ltd.",
-    period: "Apr 2025 – Jul 2025",
+    period: "Apr 2025 - Jul 2025",
     points: [
       "Analyzed 20,000+ procurement, production, and export records in SQL and Excel to identify supplier pricing gaps, cost variances, and margin pressure points for quarterly business reviews.",
-      "Built a regression-based demand forecasting workflow using 12 months of sales and procurement data, improving inventory planning accuracy by 15% and reducing stockout and overstock risks.",
+      "Built a regression-based demand forecasting workflow using 12 months of sales and procurement data, improving inventory planning accuracy by 15% and reducing stockout and overstock risk.",
       "Presented product-line contribution margin and cost-allocation insights through Power BI dashboards to support supply chain and leadership decision-making.",
       "Automated vendor payment and accounts receivable reconciliation with Excel Power Query and VBA, reducing monthly close time by 25% and improving reporting consistency.",
     ],
@@ -63,7 +63,7 @@ const experienceData = [
     points: [
       "Reviewed and reconciled financial records across multiple client portfolios, strengthening reporting accuracy through standardized validation workflows and audit support.",
       "Performed compliance checks and data-quality audits on 30+ client document sets, identifying discrepancies and escalating issues for timely review and resolution.",
-      "Built reusable Excel templates with dynamic formulas and PivotTables, cutting recurring report preparation time by 20% and improving standardization across engagements.",
+      "Built reusable Excel templates with dynamic formulas and PivotTables, reducing recurring report preparation time by 20% and improving standardization across engagements.",
     ],
   },
 ];
@@ -73,13 +73,19 @@ const flagshipProject = {
   subtitle:
     "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit",
   description:
-    "A business-focused decision system designed to improve warehouse operations by turning shipment, disruption, and throughput data into better staffing, flow, and risk-management decisions.",
+    "An end-to-end analytics system built to improve warehouse staffing, shipment flow, disruption monitoring, and throughput planning using forecasting, machine learning, SQL, and business decision logic.",
+  highlights: [
+    { label: "Supply chain records analyzed", value: "53,000+" },
+    { label: "Throughput model performance", value: "R² = 0.874" },
+    { label: "SQL architecture", value: "5-table MySQL schema" },
+    { label: "Statistical validation", value: "6 tests in R" },
+  ],
   bullets: [
-    "Built an end-to-end workflow across ~53,000 supply chain records covering demand forecasting, disruption risk classification, throughput prediction, and decision support.",
-    "Developed forecasting and predictive models using Prophet, XGBoost, and Gradient Boosting, with throughput prediction reaching R² = 0.874.",
-    "Designed a 5-table MySQL schema, ran 8 analytical SQL queries, and validated insights with 6 statistical tests in R.",
-    "Applied SHAP explainability to identify operational cost drivers, including an estimated $2,286 cost per disruption hour, and translated findings into staffing and flow recommendations.",
-    "Structured the project as a realistic operations decision engine rather than a standalone model, aligning analytics outputs with warehouse manager and leadership decisions.",
+    "Built a realistic warehouse decision workflow covering demand forecasting, disruption risk classification, throughput prediction, and decision support.",
+    "Developed models using Prophet, XGBoost, and Gradient Boosting to connect operational data with staffing and planning decisions.",
+    "Designed a structured SQL layer and analytical queries to make shipment, disruption, and throughput analysis reproducible and business-ready.",
+    "Applied SHAP explainability to identify operational cost drivers, including an estimated $2,286 cost per disruption hour.",
+    "Deployed the work as a live Streamlit application to make model outputs usable for scenario-based decision-making.",
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
   liveApp: "https://warehouse-garvit.streamlit.app",
@@ -91,10 +97,10 @@ const projectData = [
     title: "Revenue Prediction & Customer Segmentation",
     subtitle: "Predictive Analytics · Regression · Classification",
     description:
-      "Built predictive workflows for revenue forecasting and customer segmentation to support prioritization, business planning, and performance improvement initiatives.",
+      "Built forecasting and segmentation workflows to support revenue planning, customer prioritization, and performance improvement decisions.",
     bullets: [
-      "Designed regression and classification workflows for forecasting and customer targeting.",
-      "Connected model outputs with business actions instead of stopping at technical metrics.",
+      "Designed regression and classification workflows for revenue forecasting and customer grouping.",
+      "Connected model outputs to business actions instead of stopping at technical metrics.",
       "Framed the work around growth, profitability, and decision support.",
     ],
   },
@@ -103,29 +109,29 @@ const projectData = [
     title: "SQL Database Design & KPI Dashboard",
     subtitle: "SQL · Power BI · DAX · Reporting Automation",
     description:
-      "Designed a normalized relational database structure and KPI dashboard layer to reduce manual reporting effort and improve stakeholder visibility into performance trends.",
+      "Designed a structured relational database and KPI dashboard layer to reduce manual reporting effort and improve visibility into performance trends.",
     bullets: [
-      "Wrote optimized SQL queries using JOINs, CTEs, and window functions for operational and performance analysis.",
+      "Wrote SQL queries using JOINs, CTEs, and window functions for operational and performance analysis.",
       "Built KPI dashboards in Power BI with DAX to track multi-period trends and business performance.",
-      "Reduced reliance on manual operational data pulls by structuring reusable reporting logic.",
+      "Reduced manual data-pull dependency by structuring reusable reporting logic.",
     ],
   },
   {
     icon: <BarChart3 size={22} />,
-    title: "JityAI Analytics Platform Work",
-    subtitle: "Pricing Analytics · Forecasting · Inventory Insights",
+    title: "Pricing & Inventory Analytics",
+    subtitle: "Retail Analytics · Forecasting · SKU Performance",
     description:
-      "Worked on analytics use cases involving pricing, demand forecasting, SKU-level performance, and inventory analysis to support better operating decisions.",
+      "Worked on pricing, demand, and inventory analysis use cases to support SKU-level decisions and operating visibility.",
     bullets: [
       "Built analysis around sales trends, product mix, and inventory planning.",
       "Supported pricing and assortment decisions using structured KPI views.",
-      "Connected analytics with practical recommendations for decision-makers.",
+      "Translated analytical work into practical recommendations for decision-makers.",
     ],
   },
 ];
 
 const skillsData = {
-  "Analytics & Decisioning": [
+  "Analytics & Modeling": [
     "Forecasting",
     "Regression",
     "Classification",
@@ -162,7 +168,7 @@ const certifications = [
   "Data Science & Business Analytics - University of Maryland",
   "Power BI - Udemy",
   "Tableau Desktop Specialist",
-  "Economics & Sustainability - Wayland Baptist",
+  "Economics & Sustainability - Wayland Baptist University",
 ];
 
 const quickStats = [
@@ -201,9 +207,29 @@ const educationData = [
     school: "University of Delhi",
     period: "Completed",
     details:
-      "Built foundation in finance, accounting, business analysis, and quantitative decision-making.",
+      "Built a foundation in finance, accounting, business analysis, and quantitative decision-making.",
   },
 ];
+
+function SectionHeader({
+  eyebrow,
+  title,
+  subtitle,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle?: string;
+}) {
+  return (
+    <div className="mb-10">
+      <p className="text-sm uppercase tracking-[0.22em] text-gray-500">{eyebrow}</p>
+      <h2 className="mt-3 text-3xl font-semibold md:text-4xl">{title}</h2>
+      {subtitle ? (
+        <p className="mt-4 max-w-3xl leading-7 text-gray-400">{subtitle}</p>
+      ) : null}
+    </div>
+  );
+}
 
 export default function GarvitPortfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -215,7 +241,7 @@ export default function GarvitPortfolio() {
         .map((link) => document.querySelector(link.href) as HTMLElement | null)
         .filter(Boolean) as HTMLElement[];
 
-      const scrollPosition = window.scrollY + 160;
+      const scrollPosition = window.scrollY + 180;
       let current = "about";
 
       for (const section of sections) {
@@ -236,7 +262,7 @@ export default function GarvitPortfolio() {
 
   return (
     <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="pointer-events-none fixed inset-0">
         <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-white/5 blur-3xl" />
         <div className="absolute bottom-20 left-0 h-[260px] w-[260px] rounded-full bg-white/5 blur-3xl" />
@@ -298,7 +324,7 @@ export default function GarvitPortfolio() {
         id="top"
         className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-8 md:pb-20 md:pt-28"
       >
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr]">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -316,18 +342,18 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.5 }}
               className="mt-6 text-sm uppercase tracking-[0.22em] text-gray-500"
             >
-              Business Analytics · Operations · Supply Chain · AI
+              Business Analytics · Operations · Supply Chain · BI
             </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mt-5 text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
+              className="mt-5 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
             >
-              Building data-driven systems
+              Turning data into
               <span className="block text-gray-300">
-                for real-world operational decisions.
+                better operational decisions.
               </span>
             </motion.h1>
 
@@ -337,11 +363,10 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.7 }}
               className="mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg"
             >
-              I&apos;m Garvit Mittal, a Business Analytics & AI graduate student with
-              experience across operations, forecasting, reporting automation, and
-              business analysis. I work at the intersection of analytics and business
-              decision-making, building models, dashboards, and reporting systems that
-              help leaders act with more clarity, speed, and confidence.
+              I’m Garvit Mittal, a Business Analytics & AI graduate student with
+              experience in forecasting, reporting automation, operational analysis,
+              and business-facing decision support. I build analytics systems that help
+              teams improve planning, visibility, and execution.
             </motion.p>
 
             <motion.p
@@ -350,9 +375,9 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.78 }}
               className="mt-5 max-w-3xl text-base leading-8 text-gray-300"
             >
-              My strongest work includes an ML-powered warehouse decision system,
-              forecasting projects, operational analysis, and KPI frameworks built to
-              solve real business problems rather than showcase isolated tools.
+              My work spans warehouse analytics, pricing and inventory analysis,
+              KPI dashboards, and forecasting models built for real business use,
+              not isolated technical demos.
             </motion.p>
 
             <motion.div
@@ -377,12 +402,12 @@ export default function GarvitPortfolio() {
               </a>
 
               <a
-                href="https://www.garvitmittal.com"
+                href={flagshipProject.liveApp}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
               >
-                <Globe size={16} /> Live Portfolio
+                <Globe size={16} /> Live App
               </a>
             </motion.div>
 
@@ -394,7 +419,7 @@ export default function GarvitPortfolio() {
             >
               <a
                 href="mailto:garvitm534@gmail.com"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
               >
                 <Mail size={14} /> garvitm534@gmail.com
               </a>
@@ -402,7 +427,7 @@ export default function GarvitPortfolio() {
                 href="https://github.com/garvit-mittal04"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
               >
                 <ExternalLink size={14} /> GitHub
               </a>
@@ -410,7 +435,7 @@ export default function GarvitPortfolio() {
                 href="https://www.linkedin.com/in/garvit-mittal-81171632a/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
               >
                 <ExternalLink size={14} /> LinkedIn
               </a>
@@ -439,10 +464,10 @@ export default function GarvitPortfolio() {
             </div>
 
             <div className="mt-5 rounded-2xl border border-white/10 bg-black/40 p-5">
-              <p className="text-sm text-gray-500">Current Focus</p>
+              <p className="text-sm text-gray-500">What I bring</p>
               <p className="mt-2 text-lg font-semibold text-white">
-                Business Analytics, Supply Chain, Operations, BI, and AI-driven
-                decision support
+                Analytics depth, business context, and a strong focus on operations
+                and decision-making
               </p>
             </div>
           </motion.div>
@@ -453,32 +478,31 @@ export default function GarvitPortfolio() {
         id="about"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.22em] text-gray-500">About</p>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">How I think</h2>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">How I work</h2>
           </div>
 
           <div className="space-y-5 leading-8 text-gray-300">
             <p>
-              My background in finance and business analysis shapes how I approach
-              data. I do not look at analytics as just modeling or reporting. I look
-              at it as a way to improve cost visibility, forecasting quality,
-              operational efficiency, and business decision outcomes.
+              My background in finance, business analysis, and operations shapes how I
+              approach data problems. I focus on building analytics that improve
+              planning, cost visibility, forecasting quality, and business execution.
             </p>
 
             <p>
-              Across my work, I have built forecasting models that improved planning
-              accuracy by 15–20%, analyzed 20,000+ operational records to surface cost
-              and supplier insights, and automated reporting workflows that reduced
-              monthly close time by 25%.
+              Across my work, I have improved forecast accuracy by 15–20%, analyzed
+              20,000+ operational records to uncover cost and supplier insights, and
+              automated reporting workflows that reduced monthly close time by 25%.
             </p>
 
             <p>
-              I am most interested in roles where data is used to drive better
-              decisions in supply chain, operations, business intelligence, and
-              performance management. My goal is to build systems that help teams move
-              from reactive reporting to structured, forward-looking decision-making.
+              I am especially interested in business analytics, operations, supply
+              chain, and BI roles where analytical work directly influences planning,
+              performance, and decision-making. My long-term goal is to build systems
+              that move teams from reactive reporting to structured, forward-looking
+              action.
             </p>
           </div>
         </div>
@@ -488,14 +512,11 @@ export default function GarvitPortfolio() {
         id="education"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-10">
-          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
-            Education
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Academic foundation
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Education"
+          title="Academic foundation"
+          subtitle="A mix of analytics, quantitative thinking, business context, and applied problem-solving."
+        />
 
         <div className="grid gap-6">
           {educationData.map((item) => (
@@ -528,14 +549,11 @@ export default function GarvitPortfolio() {
         id="experience"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-10">
-          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
-            Experience
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Work that created business value
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Experience"
+          title="Work that created business value"
+          subtitle="Experience across retail analytics, operations, finance, reporting, and business-facing analytical support."
+        />
 
         <div className="space-y-6">
           {experienceData.map((item) => (
@@ -561,7 +579,7 @@ export default function GarvitPortfolio() {
               <div className="mt-5 space-y-3 pl-0 md:pl-[68px]">
                 {item.points.map((point, index) => (
                   <div key={index} className="flex gap-3 text-gray-300">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-white/70" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-white/70" />
                     <p className="leading-7">{point}</p>
                   </div>
                 ))}
@@ -575,14 +593,11 @@ export default function GarvitPortfolio() {
         id="projects"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-10">
-          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
-            Projects
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Featured work
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Projects"
+          title="Featured work"
+          subtitle="My strongest work is built around business problems, measurable outcomes, and usable decision systems."
+        />
 
         <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-xl">
           <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
@@ -610,6 +625,18 @@ export default function GarvitPortfolio() {
           <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">
             {flagshipProject.description}
           </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {flagshipProject.highlights.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-white/10 bg-black/30 p-4"
+              >
+                <p className="text-sm text-gray-500">{item.label}</p>
+                <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {flagshipProject.bullets.map((bullet, index) => (
@@ -640,7 +667,7 @@ export default function GarvitPortfolio() {
               className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:scale-[1.02]"
             >
               <Globe size={16} />
-              Launch Live System
+              Launch Live App
             </a>
           </div>
         </div>
@@ -662,7 +689,7 @@ export default function GarvitPortfolio() {
               <div className="mt-5 space-y-3">
                 {project.bullets.map((bullet, index) => (
                   <div key={index} className="flex gap-3 text-gray-300">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-white/70" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-white/70" />
                     <p className="leading-7">{bullet}</p>
                   </div>
                 ))}
@@ -676,14 +703,11 @@ export default function GarvitPortfolio() {
         id="skills"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-10">
-          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
-            Skills
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Tools, methods, and business strengths
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Skills"
+          title="Tools, methods, and business strengths"
+          subtitle="Technical capability is strongest when paired with business understanding and clear communication."
+        />
 
         <div className="grid gap-6 lg:grid-cols-2">
           {Object.entries(skillsData).map(([category, skills], index) => {
@@ -755,9 +779,9 @@ export default function GarvitPortfolio() {
           </h2>
 
           <p className="mt-5 max-w-3xl leading-8 text-gray-300">
-            I&apos;m interested in business analytics, operations, supply chain,
-            business intelligence, and data-focused roles where analytical work can
-            directly influence planning, performance, and decision-making.
+            I’m actively interested in business analytics, operations, supply chain,
+            BI, and data-focused roles where analytical work can directly improve
+            planning, performance, and business decisions.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -809,7 +833,7 @@ export default function GarvitPortfolio() {
                 <span className="font-medium">Live App</span>
               </div>
               <p className="mt-3 text-gray-300">
-                Open the warehouse analytics dashboard
+                Open the warehouse decision system
               </p>
             </a>
           </div>
@@ -821,13 +845,13 @@ export default function GarvitPortfolio() {
             </div>
 
             <a
-              href={flagshipProject.liveApp}
+              href={flagshipProject.github}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
             >
-              <Globe size={14} />
-              View Live Dashboard
+              <ExternalLink size={14} />
+              View GitHub
             </a>
           </div>
         </div>
