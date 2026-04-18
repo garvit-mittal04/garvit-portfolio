@@ -210,7 +210,7 @@ const educationData = [
   },
   {
     degree: "Bachelor of Commerce",
-    school: "University of Delhi",
+    school: "Christ University, Bangalore",
     // NOTE: Replace "2022" with your actual graduation year.
     period: "May 2025",
     details:
