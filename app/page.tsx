@@ -163,10 +163,10 @@ const skillsData = {
 };
 
 const certifications = [
-  "Data Science & Business Analytics — University of Maryland",
-  "Power BI — Udemy",
+  "Data Science & Business Analytics - University of Maryland",
+  "Power BI - Udemy",
   "Tableau Desktop Specialist",
-  "Economics & Sustainability — Wayland Baptist",
+  "Economics & Sustainability - Wayland Baptist",
 ];
 
 const quickStats = [
@@ -303,7 +303,7 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.5 }}
               className="mt-6 text-sm uppercase tracking-[0.22em] text-gray-500"
             >
-              Supply Chain · Operations · Business Analytics · AI
+              Business Analytics · Operations · Supply Chain · AI
             </motion.p>
 
             <motion.h1
