@@ -204,7 +204,7 @@ const educationData = [
   {
     degree: "Master of Science in Business Analytics & Artificial Intelligence",
     school: "The University of Texas at Dallas",
-    period: "2025 – Present",
+    period: "August 2025 – Present",
     details:
       "Focused on business analytics, machine learning, operations, decision support, and data-driven problem solving.",
   },
@@ -212,7 +212,7 @@ const educationData = [
     degree: "Bachelor of Commerce",
     school: "University of Delhi",
     // NOTE: Replace "2022" with your actual graduation year.
-    period: "2022",
+    period: "May 2025",
     details:
       "Built a foundation in finance, accounting, business analysis, and quantitative decision-making.",
   },
