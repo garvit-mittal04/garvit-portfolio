@@ -10,19 +10,19 @@ import {
   MapPin,
   Menu,
   X,
-  BriefcaseBusiness,
   GraduationCap,
-  BrainCircuit,
   BarChart3,
   Database,
   LineChart,
-  Boxes,
   FileBarChart,
   Award,
   Sparkles,
   ShieldCheck,
   Target,
   Globe,
+  Boxes,
+  BriefcaseBusiness,
+  BrainCircuit,
 } from "lucide-react";
 
 const navLinks = [
@@ -70,7 +70,8 @@ const experienceData = [
 
 const flagshipProject = {
   title: "ML-Powered Warehouse Decision System",
-  subtitle: "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R",
+  subtitle:
+    "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit",
   description:
     "A business-focused decision system designed to improve warehouse operations by turning shipment, disruption, and throughput data into better staffing, flow, and risk-management decisions.",
   bullets: [
@@ -81,6 +82,7 @@ const flagshipProject = {
     "Structured the project as a realistic operations decision engine rather than a standalone model, aligning analytics outputs with warehouse manager and leadership decisions.",
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
+  liveApp: "https://warehouse-garvit.streamlit.app",
 };
 
 const projectData = [
@@ -95,8 +97,6 @@ const projectData = [
       "Connected model outputs with business actions instead of stopping at technical metrics.",
       "Framed the work around growth, profitability, and decision support.",
     ],
-    link: "",
-    linkLabel: "",
   },
   {
     icon: <Database size={22} />,
@@ -109,8 +109,6 @@ const projectData = [
       "Built KPI dashboards in Power BI with DAX to track multi-period trends and business performance.",
       "Reduced reliance on manual operational data pulls by structuring reusable reporting logic.",
     ],
-    link: "",
-    linkLabel: "",
   },
   {
     icon: <BarChart3 size={22} />,
@@ -123,8 +121,6 @@ const projectData = [
       "Supported pricing and assortment decisions using structured KPI views.",
       "Connected analytics with practical recommendations for decision-makers.",
     ],
-    link: "",
-    linkLabel: "",
   },
 ];
 
@@ -189,6 +185,23 @@ const quickStats = [
     label: "Warehouse Throughput Model",
     value: "R² 0.874",
     icon: <ShieldCheck size={18} />,
+  },
+];
+
+const educationData = [
+  {
+    degree: "Master of Science in Business Analytics & Artificial Intelligence",
+    school: "The University of Texas at Dallas",
+    period: "2025 - Present",
+    details:
+      "Focused on business analytics, machine learning, operations, decision support, and data-driven problem solving.",
+  },
+  {
+    degree: "Bachelor’s in Commerce",
+    school: "University of Delhi",
+    period: "Completed",
+    details:
+      "Built foundation in finance, accounting, business analysis, and quantitative decision-making.",
   },
 ];
 
@@ -475,49 +488,39 @@ export default function GarvitPortfolio() {
         id="education"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-8 flex items-center gap-3">
-          <GraduationCap size={24} />
-          <h2 className="text-3xl font-semibold md:text-4xl">Education</h2>
+        <div className="mb-10">
+          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
+            Education
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Academic foundation
+          </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
-            <p className="text-sm text-gray-500">Expected May 2027</p>
-            <h3 className="mt-2 text-xl font-semibold">
-              MS in Business Analytics & Artificial Intelligence
-            </h3>
-            <p className="mt-2 text-gray-300">The University of Texas at Dallas</p>
-            <p className="mt-1 text-sm text-gray-500">GPA: 3.44 / 4.0</p>
-            <p className="mt-4 leading-7 text-gray-400">
-              Relevant areas: Data Analytics, Advanced Statistics, A/B Testing,
-              Applied Econometrics, and Operations Management.
-            </p>
-          </div>
+        <div className="grid gap-6">
+          {educationData.map((item) => (
+            <div
+              key={`${item.school}-${item.degree}`}
+              className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
+            >
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                <div className="flex gap-4">
+                  <div className="mt-1 rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300">
+                    <GraduationCap size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">{item.degree}</h3>
+                    <p className="mt-1 text-gray-400">{item.school}</p>
+                    <p className="mt-3 max-w-3xl leading-7 text-gray-300">
+                      {item.details}
+                    </p>
+                  </div>
+                </div>
 
-          <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
-            <p className="text-sm text-gray-500">Completed May 2025</p>
-            <h3 className="mt-2 text-xl font-semibold">BBA (Hons.) in Finance</h3>
-            <p className="mt-2 text-gray-300">Christ University, Bangalore, India</p>
-            <p className="mt-4 leading-7 text-gray-400">
-              Built a foundation in finance, business reporting, analysis, and
-              performance evaluation that now complements my analytics and AI work.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-8 rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
-          <div className="flex items-center gap-3">
-            <Award size={20} />
-            <h3 className="text-xl font-semibold">Certifications</h3>
-          </div>
-          <ul className="mt-5 grid gap-3 md:grid-cols-2">
-            {certifications.map((cert) => (
-              <li key={cert} className="flex gap-3 text-gray-300 leading-7">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
-                <span>{cert}</span>
-              </li>
-            ))}
-          </ul>
+                <p className="text-sm text-gray-500 md:pl-6">{item.period}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -525,41 +528,45 @@ export default function GarvitPortfolio() {
         id="experience"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-10 flex items-center gap-3">
-          <BriefcaseBusiness size={24} />
-          <h2 className="text-3xl font-semibold md:text-4xl">Experience</h2>
+        <div className="mb-10">
+          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
+            Experience
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Work that created business value
+          </h2>
         </div>
 
-        <div className="relative ml-3 space-y-10 border-l border-white/10">
-          {experienceData.map((item, index) => (
-            <motion.div
-              key={`${item.role}-${item.company}`}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="relative pl-8"
+        <div className="space-y-6">
+          {experienceData.map((item) => (
+            <div
+              key={`${item.company}-${item.role}`}
+              className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
             >
-              <div className="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-white" />
-              <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
-                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                <div className="flex gap-4">
+                  <div className="mt-1 rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300">
+                    <BriefcaseBusiness size={22} />
+                  </div>
+
                   <div>
                     <h3 className="text-xl font-semibold">{item.role}</h3>
-                    <p className="mt-1 text-gray-300">{item.company}</p>
+                    <p className="mt-1 text-gray-400">{item.company}</p>
                   </div>
-                  <p className="whitespace-nowrap text-sm text-gray-500">{item.period}</p>
                 </div>
 
-                <ul className="mt-5 space-y-3 text-gray-400 leading-7">
-                  {item.points.map((point) => (
-                    <li key={point} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-sm text-gray-500">{item.period}</p>
               </div>
-            </motion.div>
+
+              <div className="mt-5 space-y-3 pl-0 md:pl-[68px]">
+                {item.points.map((point, index) => (
+                  <div key={index} className="flex gap-3 text-gray-300">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-white/70" />
+                    <p className="leading-7">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -568,99 +575,99 @@ export default function GarvitPortfolio() {
         id="projects"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-10 flex items-center gap-3">
-          <BrainCircuit size={24} />
-          <h2 className="text-3xl font-semibold md:text-4xl">Projects</h2>
+        <div className="mb-10">
+          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
+            Projects
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Featured work
+          </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.45 }}
-          className="mb-8 rounded-[30px] border border-white/10 bg-white/[0.05] p-7"
-        >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300">
-            <Sparkles size={15} />
-            Flagship Project
+        <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-xl">
+          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+            <span className="rounded-full border border-white/10 px-3 py-1">
+              Flagship Project
+            </span>
+            <span className="rounded-full border border-white/10 px-3 py-1">
+              Operations Analytics
+            </span>
+            <span className="rounded-full border border-white/10 px-3 py-1">
+              Live App
+            </span>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="mt-5 flex items-start gap-4">
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300">
+              <Boxes size={24} />
+            </div>
             <div>
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/10">
-                <Boxes size={24} />
-              </div>
-
-              <h3 className="mt-5 text-3xl font-semibold">{flagshipProject.title}</h3>
-              <p className="mt-2 text-sm text-gray-500">{flagshipProject.subtitle}</p>
-              <p className="mt-5 max-w-3xl leading-8 text-gray-300">
-                {flagshipProject.description}
-              </p>
-
-              <a
-                href={flagshipProject.github}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-medium text-black transition hover:scale-[1.02]"
-              >
-                View GitHub Project <ExternalLink size={15} />
-              </a>
-            </div>
-
-            <div className="rounded-[24px] border border-white/10 bg-black/30 p-6">
-              <p className="text-sm uppercase tracking-[0.18em] text-gray-500">
-                Why it stands out
-              </p>
-              <ul className="mt-5 space-y-4 text-gray-300">
-                {flagshipProject.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3 leading-7">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-2xl font-semibold">{flagshipProject.title}</h3>
+              <p className="mt-2 text-sm text-gray-400">{flagshipProject.subtitle}</p>
             </div>
           </div>
-        </motion.div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {projectData.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6 transition hover:bg-white/[0.06]"
+          <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">
+            {flagshipProject.description}
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {flagshipProject.bullets.map((bullet, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-white/10 bg-black/30 p-4"
+              >
+                <p className="leading-7 text-gray-300">{bullet}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href={flagshipProject.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10"
             >
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10">
+              <ExternalLink size={16} />
+              View Code
+            </a>
+
+            <a
+              href={flagshipProject.liveApp}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:scale-[1.02]"
+            >
+              <Globe size={16} />
+              Launch Live System
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          {projectData.map((project) => (
+            <div
+              key={project.title}
+              className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
+            >
+              <div className="inline-flex rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300">
                 {project.icon}
               </div>
 
-              <h3 className="mt-5 text-2xl font-semibold">{project.title}</h3>
-              <p className="mt-2 text-sm text-gray-500">{project.subtitle}</p>
-              <p className="mt-4 leading-7 text-gray-400">{project.description}</p>
+              <h3 className="mt-5 text-xl font-semibold">{project.title}</h3>
+              <p className="mt-2 text-sm text-gray-400">{project.subtitle}</p>
+              <p className="mt-4 leading-7 text-gray-300">{project.description}</p>
 
-              <ul className="mt-5 space-y-3 text-gray-300">
-                {project.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
-                    <span>{bullet}</span>
-                  </li>
+              <div className="mt-5 space-y-3">
+                {project.bullets.map((bullet, index) => (
+                  <div key={index} className="flex gap-3 text-gray-300">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-white/70" />
+                    <p className="leading-7">{bullet}</p>
+                  </div>
                 ))}
-              </ul>
-
-              {project.link && (
-                <a
-                  href={project.link}
-                  target={project.link.startsWith("http") ? "_blank" : undefined}
-                  rel={project.link.startsWith("http") ? "noreferrer" : undefined}
-                  className="mt-6 inline-flex items-center gap-2 text-sm text-white hover:text-gray-300"
-                >
-                  {project.linkLabel} <ExternalLink size={14} />
-                </a>
-              )}
-            </motion.div>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -669,30 +676,69 @@ export default function GarvitPortfolio() {
         id="skills"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="mb-10 flex items-center gap-3">
-          <FileBarChart size={24} />
-          <h2 className="text-3xl font-semibold md:text-4xl">Skills</h2>
+        <div className="mb-10">
+          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
+            Skills
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Tools, methods, and business strengths
+          </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {Object.entries(skillsData).map(([category, items]) => (
-            <div
-              key={category}
-              className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
-            >
-              <h3 className="text-xl font-semibold">{category}</h3>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-white/10 bg-black/40 px-3 py-2 text-sm text-gray-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
+        <div className="grid gap-6 lg:grid-cols-2">
+          {Object.entries(skillsData).map(([category, skills], index) => {
+            const icons = [
+              <BrainCircuit size={22} key="a" />,
+              <Database size={22} key="b" />,
+              <FileBarChart size={22} key="c" />,
+              <BarChart3 size={22} key="d" />,
+            ];
+
+            return (
+              <div
+                key={category}
+                className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300">
+                    {icons[index]}
+                  </div>
+                  <h3 className="text-xl font-semibold">{category}</h3>
+                </div>
+
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/10 bg-black/40 px-4 py-2 text-sm text-gray-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
+          <div className="flex items-center gap-3">
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300">
+              <Award size={22} />
             </div>
-          ))}
+            <h3 className="text-xl font-semibold">Certifications</h3>
+          </div>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            {certifications.map((cert) => (
+              <div
+                key={cert}
+                className="rounded-2xl border border-white/10 bg-black/30 p-4 text-gray-300"
+              >
+                {cert}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -700,71 +746,92 @@ export default function GarvitPortfolio() {
         id="contact"
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
-        <div className="rounded-[32px] border border-white/10 bg-white/[0.04] p-8 md:p-10">
-          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">Contact</p>
+        <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-8 md:p-10">
+          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
+            Contact
+          </p>
           <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Open to analytics and operations opportunities.
+            Let&apos;s connect
           </h2>
-          <p className="mt-4 max-w-2xl leading-8 text-gray-400">
-            I&apos;m actively building toward roles in business analytics, operations,
-            supply chain, business intelligence, and AI-enabled decision support. If
-            you are hiring for internships, analyst roles, or project-based work, I&apos;d
-            be glad to connect.
+
+          <p className="mt-5 max-w-3xl leading-8 text-gray-300">
+            I&apos;m interested in business analytics, operations, supply chain,
+            business intelligence, and data-focused roles where analytical work can
+            directly influence planning, performance, and decision-making.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <a
               href="mailto:garvitm534@gmail.com"
-              className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
+              className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
             >
-              <Mail size={20} />
-              <div>
-                <p className="text-sm text-gray-500">Email</p>
-                <p className="text-gray-200">garvitm534@gmail.com</p>
+              <div className="flex items-center gap-3 text-white">
+                <Mail size={18} />
+                <span className="font-medium">Email</span>
               </div>
+              <p className="mt-3 text-gray-300">garvitm534@gmail.com</p>
             </a>
-
-            <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/40 p-5">
-              <MapPin size={20} />
-              <div>
-                <p className="text-sm text-gray-500">Location</p>
-                <p className="text-gray-200">Dallas, Texas</p>
-              </div>
-            </div>
 
             <a
               href="https://www.linkedin.com/in/garvit-mittal-81171632a/"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
+              className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
             >
-              <ExternalLink size={20} />
-              <div>
-                <p className="text-sm text-gray-500">LinkedIn</p>
-                <p className="text-gray-200">garvit-mittal-81171632a</p>
+              <div className="flex items-center gap-3 text-white">
+                <ExternalLink size={18} />
+                <span className="font-medium">LinkedIn</span>
               </div>
+              <p className="mt-3 text-gray-300">Connect professionally</p>
             </a>
 
             <a
               href="https://github.com/garvit-mittal04"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
+              className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
             >
-              <ExternalLink size={20} />
-              <div>
-                <p className="text-sm text-gray-500">GitHub</p>
-                <p className="text-gray-200">garvit-mittal04</p>
+              <div className="flex items-center gap-3 text-white">
+                <ExternalLink size={18} />
+                <span className="font-medium">GitHub</span>
               </div>
+              <p className="mt-3 text-gray-300">Explore code and project work</p>
+            </a>
+
+            <a
+              href={flagshipProject.liveApp}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
+            >
+              <div className="flex items-center gap-3 text-white">
+                <Globe size={18} />
+                <span className="font-medium">Live App</span>
+              </div>
+              <p className="mt-3 text-gray-300">
+                Open the warehouse analytics dashboard
+              </p>
+            </a>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-gray-400">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2">
+              <MapPin size={14} />
+              Dallas, Texas
+            </div>
+
+            <a
+              href={flagshipProject.liveApp}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
+            >
+              <Globe size={14} />
+              View Live Dashboard
             </a>
           </div>
         </div>
       </section>
-
-      <footer className="mx-auto max-w-7xl border-t border-white/10 px-6 py-8 text-sm text-gray-500 md:px-8">
-        © {new Date().getFullYear()} Garvit Mittal. Built to showcase business
-        analytics, operations, and decision-focused project work.
-      </footer>
     </main>
   );
 }
