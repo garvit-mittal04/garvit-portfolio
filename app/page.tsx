@@ -776,28 +776,6 @@ export default function GarvitPortfolio() {
             ))}
           </div>
 
-          {/* ── Video Demo ── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mt-6 overflow-hidden rounded-[24px] border border-white/10"
-          >
-            <div className="border-b border-white/10 bg-white/[0.03] px-5 py-3">
-              <p className="text-xs uppercase tracking-[0.18em] text-gray-500">Live App Demo</p>
-            </div>
-            <video
-              controls
-              muted
-              playsInline
-              className="w-full"
-              aria-label="FP&A AI Agent live app walkthrough"
-            >
-              <source src="/App- Demo.mp4" type="video/mp4" />
-            </video>
-          </motion.div>
-
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href={fpaProject.github}
