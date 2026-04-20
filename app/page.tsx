@@ -23,6 +23,7 @@ import {
   BriefcaseBusiness,
   BrainCircuit,
   ExternalLink,
+  TrendingUp,
 } from "lucide-react";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -36,7 +37,6 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-// FIX: moved outside component so it isn't recreated on every render
 const SKILL_ICONS = [
   <BrainCircuit size={22} key="brain" />,
   <Database size={22} key="database" />,
@@ -48,9 +48,6 @@ const experienceData = [
   {
     role: "Business Analyst",
     company: "JityAI",
-    // NOTE: This overlaps with Harsiddhi Foods (Apr–Jul 2025). If concurrent,
-    // add a "(Part-time)" or "(Freelance)" note to the role title so recruiters
-    // don't flag it.
     period: "Jan 2025 – Aug 2025",
     points: [
       "Performed SKU-level pricing, demand, and assortment analysis for retail use cases, building KPI views and forecasting workflows that supported inventory allocation and product-mix decisions.",
@@ -83,8 +80,7 @@ const experienceData = [
 
 const flagshipProject = {
   title: "ML-Powered Warehouse Decision System",
-  subtitle:
-    "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit",
+  subtitle: "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit",
   description:
     "A business-focused analytics system designed to improve warehouse staffing, shipment flow, disruption monitoring, and throughput planning through forecasting, machine learning, SQL architecture, and decision support logic.",
   highlights: [
@@ -102,6 +98,28 @@ const flagshipProject = {
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
   liveApp: "https://warehouse-garvit.streamlit.app",
+};
+
+const fpaProject = {
+  title: "FP&A AI Analyst Agent",
+  subtitle: "Finance AI · Python · SQL · Scikit-learn · Groq LLM · Streamlit",
+  description:
+    "An end-to-end AI agent that automates the monthly finance close cycle — ingesting actuals vs. budget data, running multi-period variance analysis in SQL, detecting anomalies with machine learning, and generating board-ready management commentary using an LLM. Built directly from experience doing this work manually on 20,000+ financial records.",
+  highlights: [
+    { label: "Financial records processed", value: "408 rows" },
+    { label: "Anomalies auto-detected", value: "41 flagged" },
+    { label: "Departments analyzed", value: "6 departments" },
+    { label: "Time to full analysis", value: "< 2 minutes" },
+  ],
+  bullets: [
+    "Built a SQL variance engine using CTEs and window functions to compute dollar and percentage variance per line item, period, and department — and identify the largest gaps automatically.",
+    "Integrated Scikit-learn Isolation Forest to flag statistically unusual line items without labeled training data, highlighting outliers in red in the variance table.",
+    "Engineered a Groq LLM prompt pipeline that takes structured variance summaries as input and outputs 3–4 paragraph board-ready management commentary with risk flags.",
+    "Built a formatted 3-sheet Excel export (Executive Summary, Variance Detail, AI Commentary) and deployed the full system as a live Streamlit app with sample data preloaded.",
+    "Inspired by hands-on experience analyzing 20,000+ financial records at Harsiddhi Foods — this project is the AI-powered version of that manual workflow.",
+  ],
+  github: "https://github.com/garvit-mittal04/fpa-ai-agent",
+  liveApp: "https://fpa-ai-agent-garvit.streamlit.app",
 };
 
 const projectData = [
@@ -178,26 +196,10 @@ const certifications = [
 ];
 
 const quickStats = [
-  {
-    label: "Forecast Accuracy Lift",
-    value: "15–20%",
-    icon: <Target size={18} />,
-  },
-  {
-    label: "Operational Records Analyzed",
-    value: "20,000+",
-    icon: <Database size={18} />,
-  },
-  {
-    label: "Monthly Close Time Reduced",
-    value: "25%",
-    icon: <BarChart3 size={18} />,
-  },
-  {
-    label: "Warehouse Throughput Model",
-    value: "R² 0.874",
-    icon: <ShieldCheck size={18} />,
-  },
+  { label: "Forecast Accuracy Lift", value: "15–20%", icon: <Target size={18} /> },
+  { label: "Operational Records Analyzed", value: "20,000+", icon: <Database size={18} /> },
+  { label: "Monthly Close Time Reduced", value: "25%", icon: <BarChart3 size={18} /> },
+  { label: "Warehouse Throughput Model", value: "R² 0.874", icon: <ShieldCheck size={18} /> },
 ];
 
 const educationData = [
@@ -211,7 +213,6 @@ const educationData = [
   {
     degree: "Bachelors of Business Administration Hons. - Finance",
     school: "Christ University, Bangalore",
-    // NOTE: Replace "2022" with your actual graduation year.
     period: "May 2025",
     details:
       "Built a foundation in finance, accounting, business analysis, and quantitative decision-making.",
@@ -231,9 +232,7 @@ function SectionHeader({
 }) {
   return (
     <div className="mb-10">
-      <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
-        {eyebrow}
-      </p>
+      <p className="text-sm uppercase tracking-[0.22em] text-gray-500">{eyebrow}</p>
       <h2 className="mt-3 text-3xl font-semibold md:text-4xl">{title}</h2>
       {subtitle ? (
         <p className="mt-4 max-w-3xl leading-7 text-gray-400">{subtitle}</p>
@@ -242,16 +241,12 @@ function SectionHeader({
   );
 }
 
-// FIX: reusable accessible bullet list used in experience and project sections
 function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-3">
       {items.map((item, index) => (
         <li key={index} className="flex gap-3 text-gray-300">
-          <span
-            aria-hidden="true"
-            className="mt-2 h-2 w-2 shrink-0 rounded-full bg-white/70"
-          />
+          <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rounded-full bg-white/70" />
           <span className="leading-7">{item}</span>
         </li>
       ))}
@@ -264,11 +259,8 @@ function BulletList({ items }: { items: string[] }) {
 export default function GarvitPortfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
-
-  // FIX: ref used for click-outside detection on the mobile menu
   const headerRef = useRef<HTMLElement>(null);
 
-  // FIX: useCallback so the scroll handler reference is stable across renders
   const handleScroll = useCallback(() => {
     const sections = navLinks
       .map((link) => document.querySelector(link.href) as HTMLElement | null)
@@ -276,13 +268,11 @@ export default function GarvitPortfolio() {
 
     const scrollPosition = window.scrollY + 180;
     let current = "about";
-
     for (const section of sections) {
       if (scrollPosition >= section.offsetTop) {
         current = section.id;
       }
     }
-
     setActiveSection(current);
   }, []);
 
@@ -292,19 +282,13 @@ export default function GarvitPortfolio() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
-  // FIX: close mobile menu when user clicks anywhere outside the header
   useEffect(() => {
     if (!menuOpen) return;
-
     const handleOutsideClick = (e: MouseEvent) => {
-      if (
-        headerRef.current &&
-        !headerRef.current.contains(e.target as Node)
-      ) {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleOutsideClick);
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [menuOpen]);
@@ -313,6 +297,7 @@ export default function GarvitPortfolio() {
 
   return (
     <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
+
       {/* Background glows */}
       <div className="pointer-events-none fixed inset-0" aria-hidden="true">
         <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
@@ -321,7 +306,6 @@ export default function GarvitPortfolio() {
       </div>
 
       {/* ── Header ── */}
-      {/* FIX: ref added for click-outside detection */}
       <header
         ref={headerRef}
         className="sticky top-0 z-50 border-b border-white/10 bg-black/75 backdrop-blur-xl"
@@ -396,7 +380,7 @@ export default function GarvitPortfolio() {
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300"
             >
               <Sparkles size={15} aria-hidden="true" />
-              MS Business Analytics & AI · UT Dallas
+              MS Business Analytics &amp; AI · UT Dallas
             </motion.div>
 
             <motion.p
@@ -415,9 +399,7 @@ export default function GarvitPortfolio() {
               className="mt-5 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
             >
               Turning data into
-              <span className="block text-gray-300">
-                better operational decisions.
-              </span>
+              <span className="block text-gray-300">better operational decisions.</span>
             </motion.h1>
 
             <motion.p
@@ -426,7 +408,7 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.7 }}
               className="mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg"
             >
-              I'm Garvit Mittal, a Business Analytics & AI graduate student
+              I&apos;m Garvit Mittal, a Business Analytics &amp; AI graduate student
               focused on building forecasting, reporting, and decision-support
               systems for operations, supply chain, and business performance.
             </motion.p>
@@ -459,7 +441,6 @@ export default function GarvitPortfolio() {
                 href={flagshipProject.liveApp}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Launch the warehouse decision system live app (opens in new tab)"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
               >
                 <Globe size={16} aria-hidden="true" /> Launch Live App
@@ -468,7 +449,6 @@ export default function GarvitPortfolio() {
               <a
                 href="/RESUME.pdf"
                 download
-                aria-label="Download Garvit Mittal's resume as PDF"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
               >
                 <Download size={16} aria-hidden="true" /> Download Resume
@@ -483,7 +463,6 @@ export default function GarvitPortfolio() {
             >
               <a
                 href="mailto:garvitm534@gmail.com"
-                aria-label="Send email to garvitm534@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
               >
                 <Mail size={14} aria-hidden="true" /> garvitm534@gmail.com
@@ -492,7 +471,6 @@ export default function GarvitPortfolio() {
                 href="https://github.com/garvit-mittal04"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Garvit Mittal on GitHub (opens in new tab)"
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
               >
                 <ExternalLink size={14} aria-hidden="true" /> GitHub
@@ -501,7 +479,6 @@ export default function GarvitPortfolio() {
                 href="https://www.linkedin.com/in/garvit-mittal-81171632a/"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Garvit Mittal on LinkedIn (opens in new tab)"
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
               >
                 <ExternalLink size={14} aria-hidden="true" /> LinkedIn
@@ -518,10 +495,7 @@ export default function GarvitPortfolio() {
           >
             <div className="grid gap-4 sm:grid-cols-2">
               {quickStats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-2xl border border-white/10 bg-black/40 p-5"
-                >
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-black/40 p-5">
                   <div className="flex items-center gap-2 text-gray-500">
                     <span aria-hidden="true">{item.icon}</span>
                     <p className="text-sm">{item.label}</p>
@@ -534,8 +508,7 @@ export default function GarvitPortfolio() {
             <div className="mt-5 rounded-2xl border border-white/10 bg-black/40 p-5">
               <p className="text-sm text-gray-500">What I bring</p>
               <p className="mt-2 text-lg font-semibold text-white">
-                Analytics depth, business context, and a strong focus on
-                operations and decision-making
+                Analytics depth, business context, and a strong focus on operations and decision-making
               </p>
             </div>
           </motion.div>
@@ -549,35 +522,25 @@ export default function GarvitPortfolio() {
       >
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
-            <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
-              About
-            </p>
-            {/* FIX: changed from "What I bring" (duplicate of hero card label) */}
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              My approach
-            </h2>
+            <p className="text-sm uppercase tracking-[0.22em] text-gray-500">About</p>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">My approach</h2>
           </div>
 
           <div className="space-y-5 leading-8 text-gray-300">
             <p>
-              My background in finance, business analysis, and operations shapes
-              how I approach data problems. I focus on building analytics that
-              improve planning, cost visibility, forecasting quality, and
-              business execution.
+              My background in finance, business analysis, and operations shapes how I approach
+              data problems. I focus on building analytics that improve planning, cost visibility,
+              forecasting quality, and business execution.
             </p>
-
             <p>
-              Across my work, I have improved forecast accuracy by 15–20%,
-              analyzed 20,000+ operational records to uncover cost and supplier
-              insights, and automated reporting workflows that reduced monthly
-              close time by 25%.
+              Across my work, I have improved forecast accuracy by 15–20%, analyzed 20,000+
+              operational records to uncover cost and supplier insights, and automated reporting
+              workflows that reduced monthly close time by 25%.
             </p>
-
             <p>
-              I am especially interested in business analytics, operations,
-              supply chain, and BI roles where analytical work directly
-              influences planning, performance, and decision-making. My
-              long-term goal is to build systems that move teams from reactive
+              I am especially interested in business analytics, operations, supply chain, and BI
+              roles where analytical work directly influences planning, performance, and
+              decision-making. My long-term goal is to build systems that move teams from reactive
               reporting to structured, forward-looking action.
             </p>
           </div>
@@ -612,12 +575,9 @@ export default function GarvitPortfolio() {
                   <div>
                     <h3 className="text-xl font-semibold">{item.degree}</h3>
                     <p className="mt-1 text-gray-400">{item.school}</p>
-                    <p className="mt-3 max-w-3xl leading-7 text-gray-300">
-                      {item.details}
-                    </p>
+                    <p className="mt-3 max-w-3xl leading-7 text-gray-300">{item.details}</p>
                   </div>
                 </div>
-
                 <p className="text-sm text-gray-500 md:pl-6">{item.period}</p>
               </div>
             </div>
@@ -655,11 +615,9 @@ export default function GarvitPortfolio() {
                     <p className="mt-1 text-gray-400">{item.company}</p>
                   </div>
                 </div>
-
                 <p className="text-sm text-gray-500">{item.period}</p>
               </div>
 
-              {/* FIX: semantic ul/li instead of div/span for screen readers */}
               <div className="mt-5 pl-0 md:pl-[68px]">
                 <BulletList items={item.points} />
               </div>
@@ -679,32 +637,21 @@ export default function GarvitPortfolio() {
           subtitle="My strongest work is built around business problems, measurable outcomes, and usable decision systems."
         />
 
-        {/* Flagship project */}
+        {/* ── Warehouse Flagship ── */}
         <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-xl">
           <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
-            <span className="rounded-full border border-white/10 px-3 py-1">
-              Flagship Project
-            </span>
-            <span className="rounded-full border border-white/10 px-3 py-1">
-              Operations Analytics
-            </span>
-            <span className="rounded-full border border-white/10 px-3 py-1">
-              Live App
-            </span>
+            <span className="rounded-full border border-white/10 px-3 py-1">Flagship Project</span>
+            <span className="rounded-full border border-white/10 px-3 py-1">Operations Analytics</span>
+            <span className="rounded-full border border-white/10 px-3 py-1">Live App</span>
           </div>
 
           <div className="mt-5 flex items-start gap-4">
-            <div
-              className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300"
-              aria-hidden="true"
-            >
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
               <Boxes size={24} />
             </div>
             <div>
               <h3 className="text-2xl font-semibold">{flagshipProject.title}</h3>
-              <p className="mt-2 text-sm text-gray-400">
-                {flagshipProject.subtitle}
-              </p>
+              <p className="mt-2 text-sm text-gray-400">{flagshipProject.subtitle}</p>
             </div>
           </div>
 
@@ -712,54 +659,36 @@ export default function GarvitPortfolio() {
             {flagshipProject.description}
           </p>
 
-          {/* Highlight stats */}
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {flagshipProject.highlights.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-2xl border border-white/10 bg-black/30 p-4"
-              >
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-black/30 p-4">
                 <p className="text-sm text-gray-500">{item.label}</p>
-                <p className="mt-2 text-lg font-semibold text-white">
-                  {item.value}
-                </p>
+                <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
               </div>
             ))}
           </div>
 
-          {/* Problem / Approach / Outcome */}
           <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
             <div className="grid gap-5 md:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">
-                  Problem
-                </p>
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Problem</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Warehouse teams often make staffing, flow, and disruption
-                  decisions reactively, with limited forecasting visibility and
-                  weak operational planning support.
+                  Warehouse teams often make staffing, flow, and disruption decisions reactively,
+                  with limited forecasting visibility and weak operational planning support.
                 </p>
               </div>
-
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">
-                  Approach
-                </p>
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Approach</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Combined SQL, forecasting, classification, throughput
-                  prediction, and explainability into a decision-oriented
-                  analytics workflow.
+                  Combined SQL, forecasting, classification, throughput prediction, and
+                  explainability into a decision-oriented analytics workflow.
                 </p>
               </div>
-
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">
-                  Outcome
-                </p>
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Outcome</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Produced a usable warehouse planning system with measurable
-                  model performance, cost insights, and a live app interface for
-                  scenario evaluation.
+                  Produced a usable warehouse planning system with measurable model performance,
+                  cost insights, and a live app interface for scenario evaluation.
                 </p>
               </div>
             </div>
@@ -773,14 +702,9 @@ export default function GarvitPortfolio() {
             />
           </div>
 
-          {/* Detail bullets */}
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {/* FIX: semantic ul/li */}
             {flagshipProject.bullets.map((bullet, index) => (
-              <div
-                key={index}
-                className="rounded-2xl border border-white/10 bg-black/30 p-4"
-              >
+              <div key={index} className="rounded-2xl border border-white/10 bg-black/30 p-4">
                 <p className="leading-7 text-gray-300">{bullet}</p>
               </div>
             ))}
@@ -791,47 +715,122 @@ export default function GarvitPortfolio() {
               href={flagshipProject.github}
               target="_blank"
               rel="noreferrer"
-              aria-label="View warehouse decision system source code on GitHub (opens in new tab)"
               className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10"
             >
-              <ExternalLink size={16} aria-hidden="true" />
-              View Code
+              <ExternalLink size={16} aria-hidden="true" /> View Code
             </a>
-
             <a
               href={flagshipProject.liveApp}
               target="_blank"
               rel="noreferrer"
-              aria-label="Launch the warehouse decision system live app on Streamlit (opens in new tab)"
               className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:scale-[1.02]"
             >
-              <Globe size={16} aria-hidden="true" />
-              Launch Live App
+              <Globe size={16} aria-hidden="true" /> Launch Live App
             </a>
           </div>
         </div>
 
-        {/* Secondary projects */}
+        {/* ── FP&A AI Agent ── */}
+        <div className="mt-8 rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-xl">
+          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+            <span className="rounded-full border border-white/10 px-3 py-1">Finance AI</span>
+            <span className="rounded-full border border-white/10 px-3 py-1">FP&amp;A Automation</span>
+            <span className="rounded-full border border-white/10 px-3 py-1">Live App</span>
+          </div>
+
+          <div className="mt-5 flex items-start gap-4">
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
+              <TrendingUp size={24} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold">{fpaProject.title}</h3>
+              <p className="mt-2 text-sm text-gray-400">{fpaProject.subtitle}</p>
+            </div>
+          </div>
+
+          <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">
+            {fpaProject.description}
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {fpaProject.highlights.map((item) => (
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                <p className="text-sm text-gray-500">{item.label}</p>
+                <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
+            <div className="grid gap-5 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Problem</p>
+                <p className="mt-3 leading-7 text-gray-300">
+                  Finance teams spend 2–5 days every month-end manually comparing actuals to budget
+                  in Excel, writing variance commentary, and sending reports to leadership — a
+                  repetitive and error-prone process.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Approach</p>
+                <p className="mt-3 leading-7 text-gray-300">
+                  Built a full pipeline using SQL CTEs for variance analysis, Isolation Forest for
+                  anomaly detection, and an LLM prompt chain to generate structured management
+                  commentary automatically.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Outcome</p>
+                <p className="mt-3 leading-7 text-gray-300">
+                  A live app that takes actuals vs. budget data and produces a complete variance
+                  report, 41 flagged anomalies, risk flags, board-ready commentary, and a
+                  downloadable Excel model — in under 2 minutes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {fpaProject.bullets.map((bullet, index) => (
+              <div key={index} className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                <p className="leading-7 text-gray-300">{bullet}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href={fpaProject.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10"
+            >
+              <ExternalLink size={16} aria-hidden="true" /> View Code
+            </a>
+            <a
+              href={fpaProject.liveApp}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:scale-[1.02]"
+            >
+              <Globe size={16} aria-hidden="true" /> Launch Live App
+            </a>
+          </div>
+        </div>
+
+        {/* ── Secondary projects ── */}
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {projectData.map((project) => (
             <div
               key={project.title}
               className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
             >
-              <div
-                className="inline-flex rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300"
-                aria-hidden="true"
-              >
+              <div className="inline-flex rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
                 {project.icon}
               </div>
-
               <h3 className="mt-5 text-xl font-semibold">{project.title}</h3>
               <p className="mt-2 text-sm text-gray-400">{project.subtitle}</p>
-              <p className="mt-4 leading-7 text-gray-300">
-                {project.description}
-              </p>
-
-              {/* FIX: semantic ul/li */}
+              <p className="mt-4 leading-7 text-gray-300">{project.description}</p>
               <div className="mt-5">
                 <BulletList items={project.bullets} />
               </div>
@@ -852,17 +851,13 @@ export default function GarvitPortfolio() {
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
-          {/* FIX: uses SKILL_ICONS constant defined outside the component */}
           {Object.entries(skillsData).map(([category, skills], index) => (
             <div
               key={category}
               className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
             >
               <div className="flex items-center gap-3">
-                <div
-                  className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300"
-                  aria-hidden="true"
-                >
+                <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
                   {SKILL_ICONS[index]}
                 </div>
                 <h3 className="text-xl font-semibold">{category}</h3>
@@ -885,10 +880,7 @@ export default function GarvitPortfolio() {
 
         <div className="mt-8 rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
           <div className="flex items-center gap-3">
-            <div
-              className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300"
-              aria-hidden="true"
-            >
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
               <Award size={22} />
             </div>
             <h3 className="text-xl font-semibold">Certifications</h3>
@@ -896,10 +888,7 @@ export default function GarvitPortfolio() {
 
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             {certifications.map((cert) => (
-              <div
-                key={cert}
-                className="rounded-2xl border border-white/10 bg-black/30 p-4 text-gray-300"
-              >
+              <div key={cert} className="rounded-2xl border border-white/10 bg-black/30 p-4 text-gray-300">
                 {cert}
               </div>
             ))}
@@ -913,23 +902,18 @@ export default function GarvitPortfolio() {
         className="mx-auto max-w-7xl border-t border-white/10 px-6 py-16 md:px-8"
       >
         <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-8 md:p-10">
-          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">
-            Contact
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Let&apos;s connect
-          </h2>
+          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">Contact</p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Let&apos;s connect</h2>
 
           <p className="mt-5 max-w-3xl leading-8 text-gray-300">
-            I'm actively interested in business analytics, operations, supply
-            chain, BI, and data-focused roles where analytical work can directly
-            improve planning, performance, and business decisions.
+            I&apos;m actively interested in business analytics, operations, supply chain, BI, and
+            data-focused roles where analytical work can directly improve planning, performance,
+            and business decisions.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <a
               href="mailto:garvitm534@gmail.com"
-              aria-label="Send email to garvitm534@gmail.com"
               className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
             >
               <div className="flex items-center gap-3 text-white">
@@ -943,7 +927,6 @@ export default function GarvitPortfolio() {
               href="https://www.linkedin.com/in/garvit-mittal-81171632a/"
               target="_blank"
               rel="noreferrer"
-              aria-label="Connect with Garvit Mittal on LinkedIn (opens in new tab)"
               className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
             >
               <div className="flex items-center gap-3 text-white">
@@ -957,7 +940,6 @@ export default function GarvitPortfolio() {
               href="https://github.com/garvit-mittal04"
               target="_blank"
               rel="noreferrer"
-              aria-label="View Garvit Mittal's projects on GitHub (opens in new tab)"
               className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
             >
               <div className="flex items-center gap-3 text-white">
@@ -968,19 +950,16 @@ export default function GarvitPortfolio() {
             </a>
 
             <a
-              href={flagshipProject.liveApp}
+              href={fpaProject.liveApp}
               target="_blank"
               rel="noreferrer"
-              aria-label="Open the warehouse decision system live app (opens in new tab)"
               className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10"
             >
               <div className="flex items-center gap-3 text-white">
                 <Globe size={18} aria-hidden="true" />
-                <span className="font-medium">Live App</span>
+                <span className="font-medium">FP&amp;A AI Agent</span>
               </div>
-              <p className="mt-3 text-gray-300">
-                Open the warehouse decision system
-              </p>
+              <p className="mt-3 text-gray-300">Open the finance automation app</p>
             </a>
           </div>
 
@@ -994,15 +973,14 @@ export default function GarvitPortfolio() {
               href={flagshipProject.github}
               target="_blank"
               rel="noreferrer"
-              aria-label="View GitHub profile (opens in new tab)"
               className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10"
             >
-              <ExternalLink size={14} aria-hidden="true" />
-              View GitHub
+              <ExternalLink size={14} aria-hidden="true" /> View GitHub
             </a>
           </div>
         </div>
       </section>
+
     </main>
   );
 }
