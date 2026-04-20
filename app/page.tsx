@@ -79,7 +79,7 @@ const experienceData = [
 ];
 
 const flagshipProject = {
-  title: "ML-Powered Warehouse Decision System",
+  title: "ML-Powered Warehouse Operations Decision System",
   subtitle: "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit",
   description:
     "A business-focused analytics system designed to improve warehouse staffing, shipment flow, disruption monitoring, and throughput planning through forecasting, machine learning, SQL architecture, and decision support logic.",
