@@ -410,8 +410,8 @@ export default function GarvitPortfolio() {
               className="mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg"
             >
               I&apos;m Garvit Mittal, a Business Analytics &amp; AI graduate student
-              focused on building forecasting, reporting, and decision-support
-              systems for operations, supply chain, and business performance.
+              focused on building forecasting, reporting, and decision-support systems that improve 
+              business performance across operations, supply chain, and finance.
             </motion.p>
 
             <motion.p
@@ -420,9 +420,8 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.78 }}
               className="mt-5 max-w-3xl text-base leading-8 text-gray-300"
             >
-              My strongest work combines SQL, Python, BI tools, and machine
-              learning to solve real planning and operational problems, not just
-              create technical demos.
+              My strongest work combines SQL, Python, BI tools, and machine learning 
+              to solve real business problems - not just build technical demos.
             </motion.p>
 
             <motion.div
@@ -509,7 +508,7 @@ export default function GarvitPortfolio() {
             <div className="mt-5 rounded-2xl border border-white/10 bg-black/40 p-5">
               <p className="text-sm text-gray-500">What I bring</p>
               <p className="mt-2 text-lg font-semibold text-white">
-                Analytics depth, business context, and a strong focus on operations and decision-making
+                Analytics depth, business context, and the ability to turn data into decision-ready action.
               </p>
             </div>
           </motion.div>
