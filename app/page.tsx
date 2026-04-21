@@ -399,8 +399,8 @@ export default function GarvitPortfolio() {
               className="mt-5 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
             >
               From data to decisions -
-              <span className="block text-gray-300">Building systems that drive 
-                business outcomes.</span>
+              <span className="block text-gray-300">Driving business outcomes 
+                through analytics.</span>
             </motion.h1>
 
             <motion.p
