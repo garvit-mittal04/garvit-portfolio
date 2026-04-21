@@ -398,8 +398,9 @@ export default function GarvitPortfolio() {
               transition={{ duration: 0.6 }}
               className="mt-5 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
             >
-              From data to decisions —
-              <span className="block text-gray-300">building systems that drive business outcomes.</span>
+              From data to decisions -
+              <span className="block text-gray-300">Building systems that drive 
+                business outcomes.</span>
             </motion.h1>
 
             <motion.p
