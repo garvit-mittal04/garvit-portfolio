@@ -767,7 +767,7 @@ export default function GarvitPortfolio() {
           </p>
 
           <p className="mt-4 max-w-4xl text-sm leading-7 text-gray-400">
-            Enables faster decision-making by turning raw financial data into actionable insights instantly.
+            Converts raw financial data into decision-ready variance insights in minutes.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -796,9 +796,9 @@ export default function GarvitPortfolio() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Approach</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Built a full pipeline using SQL CTEs for variance analysis, Isolation Forest for
-                  anomaly detection, and an LLM prompt chain to generate structured management
-                  commentary automatically.
+                  Built a full pipeline using SQL CTEs for variance analysis, adaptive ML-based
+                  anomaly detection, and an LLM prompt chain to generate structured 
+                  management commentary automatically.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
