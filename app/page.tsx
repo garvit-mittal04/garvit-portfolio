@@ -91,11 +91,11 @@ const flagshipProject = {
     { label: "Automation layer", value: "Real-time alerting + automated logging (Power Automate)" },
   ],
   bullets: [
-    "Built a realistic warehouse decision workflow covering demand forecasting, disruption risk classification, throughput prediction, and scenario-based planning support.",
+    "Built an end-to-end warehouse decision system integrating forecasting, risk classification, throughput prediction, and real-time automation.",
     "Developed models using Prophet, XGBoost, and Gradient Boosting to connect operational data with staffing, planning, and flow-management decisions.",
     "Designed a structured SQL layer and analytical queries to make shipment, disruption, and throughput analysis reproducible and business-ready.",
     "Applied SHAP explainability to identify operational cost drivers, including an estimated $2,286 cost per disruption hour.",
-    "Extended the system with a Power Automate workflow that detects new warehouse report uploads, sends automated email alerts, and logs events into Excel for real-time operational monitoring.",
+    "Transformed the system into a real-time monitoring pipeline by implementing an event-driven automation layer using Power Automate, enabling instant report detection, automated alerting, and structured audit logging.",
     "Deployed the work as a live Streamlit application so model outputs could be used in a decision-facing interface rather than a static notebook.",
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
