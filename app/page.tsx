@@ -80,21 +80,23 @@ const experienceData = [
 
 const flagshipProject = {
   title: "ML-Powered Warehouse Decision System",
-  subtitle: "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit",
+  subtitle:
+    "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit · Power Automate",
   description:
-    "A business-focused analytics system designed to improve warehouse staffing, shipment flow, disruption monitoring, and throughput planning through forecasting, machine learning, SQL architecture, and decision support logic.",
+    "An end-to-end warehouse analytics and decision-support system built to improve staffing, shipment flow, disruption monitoring, throughput planning, and real-time operational visibility through forecasting, machine learning, SQL architecture, decision logic, and automation.",
   highlights: [
     { label: "Supply chain records analyzed", value: "53,000+" },
     { label: "Throughput model performance", value: "R² = 0.874" },
     { label: "SQL architecture", value: "5-table MySQL schema" },
-    { label: "Statistical validation", value: "6 tests in R" },
+    { label: "Automation layer", value: "Real-time alerts + logging" },
   ],
   bullets: [
-    "Built a realistic warehouse decision workflow covering demand forecasting, disruption risk classification, throughput prediction, and scenario-based planning support.",
+    "Built a warehouse decision workflow covering demand forecasting, disruption risk classification, throughput prediction, and scenario-based planning support.",
     "Developed models using Prophet, XGBoost, and Gradient Boosting to connect operational data with staffing, planning, and flow-management decisions.",
     "Designed a structured SQL layer and analytical queries to make shipment, disruption, and throughput analysis reproducible and business-ready.",
     "Applied SHAP explainability to identify operational cost drivers, including an estimated $2,286 cost per disruption hour.",
-    "Deployed the work as a live Streamlit application so model outputs could be used in a decision-facing interface rather than a static notebook.",
+    "Extended the system with Microsoft Power Automate to detect new warehouse report uploads, trigger email alerts, and log activity into Excel for audit tracking and real-time monitoring.",
+    "Deployed the work as a live Streamlit application so predictions, decision logic, and automation-backed workflows could be used through a decision-facing interface rather than static notebooks.",
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
   liveApp: "https://warehouse-garvit.streamlit.app",
