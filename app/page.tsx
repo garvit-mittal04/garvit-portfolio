@@ -88,7 +88,7 @@ const flagshipProject = {
     { label: "Supply chain records analyzed", value: "53,000+" },
     { label: "Throughput model performance", value: "R² = 0.874" },
     { label: "Disruption cost impact", value: "$2,286/hour" },
-    { label: "Automation layer", value: "Real-time alerts + logging" },
+    { label: "Automation layer", value: "Real-time alerting + automated logging (Power Automate)" },
   ],
   bullets: [
     "Built a realistic warehouse decision workflow covering demand forecasting, disruption risk classification, throughput prediction, and scenario-based planning support.",
@@ -172,8 +172,9 @@ const skillsData = {
     "Hypothesis Testing",
     "Root-Cause Analysis",
     "Decision Support",
+    "Decision Systems",
   ],
-  "Data & Programming": ["SQL", "Python", "R", "Excel", "Power Query", "VBA"],
+  "Data & Programming": ["SQL", "Python", "R", "Excel", "Power Query", "VBA", "Workflow Automation (Power Automate)"],
   "BI & Visualization": [
     "Power BI",
     "DAX",
@@ -188,6 +189,8 @@ const skillsData = {
     "Margin Analysis",
     "Stakeholder Communication",
     "Process Improvement",
+    "Process Automation",
+    "Event-Driven Workflows",
   ],
 };
 
@@ -682,22 +685,22 @@ export default function GarvitPortfolio() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Problem</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Warehouse teams often make staffing, flow, and disruption decisions reactively,
-                  with limited forecasting visibility and weak operational planning support.
+                  Warehouse teams operate with delayed visibility — reports are uploaded manually, disruptions are 
+                  noticed late, and decisions are made reactively without real-time signals or automated monitoring.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Approach</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Combined SQL, forecasting, classification, throughput prediction, and
-                  explainability into a decision-oriented analytics workflow.
+                  Combined SQL, forecasting, classification, throughput prediction, and explainability into a decision-oriented analytics 
+                  workflow — extended with a real-time Power Automate layer for event detection, alerting, and operational logging.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Outcome</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Produced a usable warehouse planning system with measurable model performance,
-                  cost insights, and a live app interface for scenario evaluation.
+                  Produced a full decision system with measurable model performance, cost insights, a live app interface, and a real-time 
+                  alerting pipeline that enables proactive operational monitoring instead of reactive reporting.
                 </p>
               </div>
             </div>
