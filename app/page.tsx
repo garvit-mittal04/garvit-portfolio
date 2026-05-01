@@ -713,8 +713,8 @@ export default function GarvitPortfolio() {
 
           <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10">
             <img
-              src="/warehouse-screenshot.png"
-              alt="Warehouse Decision Support System – Streamlit app showing predicted throughput, risk level, and disruption cost scenario controls"
+              src="/warehouse-v2.png"
+              alt="Warehouse Decision Support System v2 – 5-tab Streamlit app showing predicted throughput, risk level, disruption cost, and ML model insights"
               className="w-full"
             />
           </div>
