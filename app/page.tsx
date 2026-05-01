@@ -81,22 +81,22 @@ const experienceData = [
 const flagshipProject = {
   title: "ML-Powered Warehouse Decision System",
   subtitle:
-    "Flagship Project · Python · SQL · XGBoost · Prophet · SHAP · R · Streamlit · Power Automate",
+    "Flagship Project · Python · scikit-learn · Random Forest · SQL · Streamlit · openpyxl · reportlab",
   description:
-    "An end-to-end warehouse analytics and decision-support system designed to improve staffing, shipment flow, disruption monitoring, throughput planning, and operational visibility through forecasting, machine learning, SQL architecture, decision support logic, and real-time automation.",
+    "An end-to-end warehouse analytics and decision-support system built on 1,200 rows of realistic operational data. Combines Random Forest throughput prediction, risk classification, confidence interval estimation, and an interactive 5-tab Streamlit app — turning model outputs into staffing decisions, scenario comparisons, and one-click executive reports.",
   highlights: [
-    { label: "Supply chain records analyzed", value: "53,000+" },
-    { label: "Throughput model performance", value: "R² = 0.874" },
+    { label: "Throughput model R²", value: "0.934" },
+    { label: "Risk classifier accuracy", value: "91.7%" },
     { label: "Disruption cost impact", value: "$2,286/hour" },
-    { label: "Automation layer", value: "Real-time alerting + automated logging (Power Automate)" },
+    { label: "Prediction confidence", value: "P10/P90 across 150 trees" },
   ],
   bullets: [
-    "Built an end-to-end warehouse decision system integrating forecasting, risk classification, throughput prediction, and real-time automation.",
-    "Developed models using Prophet, XGBoost, and Gradient Boosting to connect operational data with staffing, planning, and flow-management decisions.",
-    "Designed a structured SQL layer and analytical queries to make shipment, disruption, and throughput analysis reproducible and business-ready.",
-    "Applied SHAP explainability to identify operational cost drivers, including an estimated $2,286 cost per disruption hour.",
-    "Transformed the system into a real-time monitoring pipeline by implementing an event-driven automation layer using Power Automate, enabling instant report detection, automated alerting, and structured audit logging.",
-    "Deployed the work as a live Streamlit application so model outputs could be used in a decision-facing interface rather than a static notebook.",
+    "Built an end-to-end warehouse decision system on 1,200 rows of operational data — Morning, Afternoon, and Night shifts with realistic distributions across staff hours, order volume, disruption hours, and risk levels.",
+    "Trained Random Forest models (150 trees) for throughput prediction (R² = 0.934, MAE ±192 units) and risk classification (91.7% accuracy), with P10/P90 confidence intervals derived from individual tree predictions.",
+    "Designed a 5-tab Streamlit app: Overview (live KPIs and charts), A/B Comparison (side-by-side scenario cards and radar chart), What-If Optimizer (81-combination grid search with heatmap), Model Intelligence (feature importance and prediction distribution), and Export Reports.",
+    "Built a What-If Optimizer that searches all combinations of staff hours (4–12) and disruption hours (0–8) to find the cheapest configuration that meets a user-defined throughput target and budget.",
+    "Generated a multi-sheet openpyxl Excel dashboard with a live Scenario Prediction sheet (KPI table, feature impact table, embedded bar chart) and a one-page reportlab PDF executive summary with automated recommendations.",
+    "Optimized performance using Streamlit caching — the 150-tree prediction loop, the 81-cell optimizer grid, and the Excel file read are all cached so tab switching and slider changes respond near-instantly after first load.",
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
   liveApp: "https://warehouse-garvit.streamlit.app",
@@ -205,7 +205,7 @@ const quickStats = [
   { label: "Forecast Accuracy Lift", value: "15–20%", icon: <Target size={18} /> },
   { label: "Operational Records Analyzed", value: "20,000+", icon: <Database size={18} /> },
   { label: "Monthly Close Time Reduced", value: "25%", icon: <BarChart3 size={18} /> },
-  { label: "Warehouse Throughput Model", value: "R² 0.874", icon: <ShieldCheck size={18} /> },
+  { label: "Warehouse Throughput Model", value: "R² 0.934", icon: <ShieldCheck size={18} /> },
 ];
 
 const educationData = [
@@ -685,22 +685,27 @@ export default function GarvitPortfolio() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Problem</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Warehouse teams operate with delayed visibility — reports are uploaded manually, disruptions are 
-                  noticed late, and decisions are made reactively without real-time signals or automated monitoring.
+                  Warehouse teams make staffing and scheduling decisions without forward-looking
+                  signals — disruptions are noticed late, costs escalate reactively, and
+                  throughput variation across shifts goes unexplained.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Approach</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Combined SQL, forecasting, classification, throughput prediction, and explainability into a decision-oriented analytics 
-                  workflow — extended with a real-time Power Automate layer for event detection, alerting, and operational logging.
+                  Trained Random Forest models on 1,200 rows of realistic operational data for
+                  throughput prediction and risk classification, with P10/P90 confidence intervals
+                  from 150 individual trees — then built a 5-tab decision app with A/B comparison,
+                  a grid-search optimizer, and one-click Excel and PDF exports.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Outcome</p>
                 <p className="mt-3 leading-7 text-gray-300">
-                  Produced a full decision system with measurable model performance, cost insights, a live app interface, and a real-time 
-                  alerting pipeline that enables proactive operational monitoring instead of reactive reporting.
+                  A live decision system with R² = 0.934 throughput prediction, 91.7% risk
+                  accuracy, a What-If Optimizer that searches 81 staffing configurations
+                  instantly, and downloadable executive reports — all running on Streamlit Cloud
+                  with performance caching.
                 </p>
               </div>
             </div>
