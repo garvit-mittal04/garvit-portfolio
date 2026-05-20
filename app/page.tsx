@@ -238,12 +238,10 @@ const slideVariants = {
   center: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.38, ease: [0.25, 0.46, 0.45, 0.94] },
   },
   exit: (dir: number) => ({
     x: dir > 0 ? -72 : 72,
     opacity: 0,
-    transition: { duration: 0.24, ease: [0.55, 0, 1, 0.45] },
   }),
 };
 
@@ -1067,6 +1065,7 @@ export default function GarvitPortfolio() {
             initial="enter"
             animate="center"
             exit="exit"
+            transition={{ duration: 0.35, ease: "easeOut" }}
           >
             {renderSection()}
           </motion.div>
