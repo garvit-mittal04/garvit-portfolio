@@ -229,8 +229,8 @@ function SectionHeader({ eyebrow, title, subtitle }: {
 }) {
   return (
     <div className="mb-10">
-      <p className="text-sm uppercase tracking-[0.22em] text-amber-500">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">{title}</h2>
+      <p className="text-sm uppercase tracking-[0.22em] text-gray-500">{eyebrow}</p>
+      <h2 className="mt-3 text-3xl font-semibold md:text-4xl">{title}</h2>
       {subtitle && <p className="mt-4 max-w-3xl leading-7 text-gray-400">{subtitle}</p>}
     </div>
   );
@@ -241,7 +241,7 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="space-y-3">
       {items.map((item, index) => (
         <li key={index} className="flex gap-3 text-gray-300">
-          <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-500/70" />
+          <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rounded-full bg-white/70" />
           <span className="leading-7">{item}</span>
         </li>
       ))}
@@ -260,7 +260,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/8 px-4 py-2 text-sm text-amber-400"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300"
           >
             <Sparkles size={15} aria-hidden="true" />
             MS Business Analytics &amp; AI · UT Dallas
@@ -270,7 +270,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mt-6 text-sm uppercase tracking-[0.22em] text-amber-600"
+            className="mt-6 text-sm uppercase tracking-[0.22em] text-gray-500"
           >
             Business Analytics · Operations · Supply Chain · BI
           </motion.p>
@@ -282,7 +282,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             className="mt-5 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
           >
             From data to decisions —
-            <span className="block text-amber-400">Driving business outcomes
+            <span className="block text-gray-300">Driving business outcomes
               through analytics.</span>
           </motion.h1>
 
@@ -307,7 +307,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             to solve real business problems — not just build technical demos.
           </motion.p>
 
-          {/* Two primary CTAs only */}
+          {/* Two primary CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -316,48 +316,38 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
           >
             <button
               onClick={() => onNav("projects")}
-              className="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-6 py-3 font-medium text-black transition hover:bg-amber-400"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-3 font-medium text-black transition hover:scale-[1.02]"
             >
               View Projects <ArrowRight size={16} aria-hidden="true" />
             </button>
             <a
               href="/RESUME.pdf"
               download
-              className="inline-flex items-center gap-2 rounded-2xl border border-amber-500/30 px-6 py-3 font-medium text-amber-400 transition hover:bg-amber-500/10"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
             >
               <Download size={16} aria-hidden="true" /> Download Resume
             </a>
           </motion.div>
 
-          {/* Subtle text links — not pill buttons */}
+          {/* Subtle text links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.92 }}
             className="mt-6 flex items-center gap-5 text-sm text-gray-500"
           >
-            <a
-              href="https://github.com/garvit-mittal04"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 transition hover:text-amber-400"
-            >
+            <a href="https://github.com/garvit-mittal04" target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-1.5 transition hover:text-white">
               <ExternalLink size={13} aria-hidden="true" /> GitHub
             </a>
             <span className="text-gray-700">·</span>
-            <a
-              href="https://www.linkedin.com/in/garvit-mittal-81171632a/"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 transition hover:text-amber-400"
-            >
+            <a href="https://www.linkedin.com/in/garvit-mittal-81171632a/" target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-1.5 transition hover:text-white">
               <ExternalLink size={13} aria-hidden="true" /> LinkedIn
             </a>
             <span className="text-gray-700">·</span>
-            <a
-              href="mailto:garvitm534@gmail.com"
-              className="inline-flex items-center gap-1.5 transition hover:text-amber-400"
-            >
+            <a href="mailto:garvitm534@gmail.com"
+              className="inline-flex items-center gap-1.5 transition hover:text-white">
               <Mail size={13} aria-hidden="true" /> garvitm534@gmail.com
             </a>
           </motion.div>
@@ -368,21 +358,21 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.65 }}
-          className="rounded-[30px] border border-amber-500/15 bg-white/[0.02] p-6 shadow-2xl"
+          className="rounded-[30px] border border-white/10 bg-white/[0.04] p-6 shadow-2xl"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             {quickStats.map((item) => (
-              <div key={item.label} className="rounded-2xl border border-white/8 bg-black/50 p-5">
-                <div className="flex items-center gap-2 text-amber-600">
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-black/40 p-5">
+                <div className="flex items-center gap-2 text-gray-500">
                   <span aria-hidden="true">{item.icon}</span>
                   <p className="text-sm">{item.label}</p>
                 </div>
-                <p className="mt-3 text-2xl font-semibold text-white">{item.value}</p>
+                <p className="mt-3 text-2xl font-semibold">{item.value}</p>
               </div>
             ))}
           </div>
-          <div className="mt-5 rounded-2xl border border-white/8 bg-black/50 p-5">
-            <p className="text-sm text-amber-600">What I bring</p>
+          <div className="mt-5 rounded-2xl border border-white/10 bg-black/40 p-5">
+            <p className="text-sm text-gray-500">What I bring</p>
             <p className="mt-2 text-lg font-semibold text-white">
               Analytics depth, business context, and the ability to turn data into decision-ready action.
             </p>
@@ -398,8 +388,8 @@ function AboutSection() {
     <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
       <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
         <div>
-          <p className="text-sm uppercase tracking-[0.22em] text-amber-500">About</p>
-          <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">My approach</h2>
+          <p className="text-sm uppercase tracking-[0.22em] text-gray-500">About</p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">My approach</h2>
         </div>
         <div className="space-y-5 leading-8 text-gray-300">
           <p>
@@ -434,18 +424,16 @@ function EducationSection() {
       />
       <div className="grid gap-6">
         {educationData.map((item) => (
-          <div
-            key={`${item.school}-${item.degree}`}
-            className="rounded-[24px] border border-white/8 bg-white/[0.03] p-6"
-          >
+          <div key={`${item.school}-${item.degree}`}
+            className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div className="flex gap-4">
-                <div className="mt-1 rounded-2xl border border-amber-500/20 bg-black/40 p-3 text-amber-500" aria-hidden="true">
+                <div className="mt-1 rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
                   <GraduationCap size={22} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">{item.degree}</h3>
-                  <p className="mt-1 text-amber-500">{item.school}</p>
+                  <h3 className="text-xl font-semibold">{item.degree}</h3>
+                  <p className="mt-1 text-gray-400">{item.school}</p>
                   <p className="mt-3 max-w-3xl leading-7 text-gray-300">{item.details}</p>
                 </div>
               </div>
@@ -468,18 +456,16 @@ function ExperienceSection() {
       />
       <div className="space-y-6">
         {experienceData.map((item) => (
-          <div
-            key={`${item.company}-${item.role}`}
-            className="rounded-[24px] border border-white/8 bg-white/[0.03] p-6"
-          >
+          <div key={`${item.company}-${item.role}`}
+            className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div className="flex gap-4">
-                <div className="mt-1 rounded-2xl border border-amber-500/20 bg-black/40 p-3 text-amber-500" aria-hidden="true">
+                <div className="mt-1 rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
                   <BriefcaseBusiness size={22} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">{item.role}</h3>
-                  <p className="mt-1 text-amber-500">{item.company}</p>
+                  <h3 className="text-xl font-semibold">{item.role}</h3>
+                  <p className="mt-1 text-gray-400">{item.company}</p>
                 </div>
               </div>
               <p className="shrink-0 text-sm text-gray-500">{item.period}</p>
@@ -508,60 +494,58 @@ function ProjectsSection() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        whileHover={{ y: -3 }}
-        className="rounded-[28px] border border-amber-500/15 bg-white/[0.03] p-8 shadow-xl transition-transform"
+        whileHover={{ y: -4 }}
+        className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-xl transition-transform"
       >
-        <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-amber-600">
-          <span className="rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1">Flagship Project</span>
-          <span className="rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1">Operations Analytics</span>
-          <span className="rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1">Live App</span>
+        <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+          <span className="rounded-full border border-white/10 px-3 py-1">Flagship Project</span>
+          <span className="rounded-full border border-white/10 px-3 py-1">Operations Analytics</span>
+          <span className="rounded-full border border-white/10 px-3 py-1">Live App</span>
         </div>
         <div className="mt-5 flex items-start gap-4">
-          <div className="rounded-2xl border border-amber-500/20 bg-black/40 p-3 text-amber-500" aria-hidden="true">
+          <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
             <Boxes size={24} />
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-white">{flagshipProject.title}</h3>
-            <p className="mt-2 text-sm text-gray-500">{flagshipProject.subtitle}</p>
+            <h3 className="text-2xl font-semibold">{flagshipProject.title}</h3>
+            <p className="mt-2 text-sm text-gray-400">{flagshipProject.subtitle}</p>
           </div>
         </div>
         <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">{flagshipProject.description}</p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {flagshipProject.highlights.map((item) => (
-            <div key={item.label} className="rounded-2xl border border-white/8 bg-black/40 p-4">
+            <div key={item.label} className="rounded-2xl border border-white/10 bg-black/30 p-4">
               <p className="text-sm text-gray-500">{item.label}</p>
-              <p className="mt-2 text-lg font-semibold text-amber-400">{item.value}</p>
+              <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 rounded-[24px] border border-dashed border-amber-500/15 bg-black/20 p-6">
+        <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
           <div className="grid gap-5 md:grid-cols-3">
             {[
               { label: "Problem", text: "Warehouse teams make staffing and scheduling decisions without forward-looking signals — disruptions are noticed late, costs escalate reactively, and throughput variation across shifts goes unexplained." },
               { label: "Approach", text: "Trained Random Forest models on 1,200 rows of realistic operational data for throughput prediction and risk classification, with P10/P90 confidence intervals from 150 individual trees — then built a 5-tab decision app with A/B comparison, a grid-search optimizer, and one-click Excel and PDF exports." },
               { label: "Outcome", text: "A live decision system with R² = 0.934 throughput prediction, 91.7% risk accuracy, a What-If Optimizer that searches 81 staffing configurations instantly, and downloadable executive reports — all running on Streamlit Cloud with performance caching." },
             ].map((block) => (
-              <div key={block.label} className="rounded-2xl border border-white/8 bg-white/[0.02] p-5">
-                <p className="text-sm uppercase tracking-[0.18em] text-amber-500">{block.label}</p>
+              <div key={block.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">{block.label}</p>
                 <p className="mt-3 leading-7 text-gray-300">{block.text}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-6 overflow-hidden rounded-[24px] border border-white/8">
-          <img
-            src="/warehouse-v2.png"
-            alt="Warehouse Decision Support System v2 – 5-tab Streamlit app"
-            className="w-full"
-          />
+        <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10">
+          <img src="/warehouse-v2.png"
+            alt="Warehouse Decision Support System v2 – 5-tab Streamlit app showing predicted throughput, risk level, disruption cost, and ML model insights"
+            className="w-full" />
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {flagshipProject.bullets.map((bullet, index) => (
-            <div key={index} className="rounded-2xl border border-white/8 bg-black/40 p-4">
+            <div key={index} className="rounded-2xl border border-white/10 bg-black/30 p-4">
               <p className="leading-7 text-gray-300">{bullet}</p>
             </div>
           ))}
@@ -569,11 +553,11 @@ function ProjectsSection() {
 
         <div className="mt-8 flex flex-wrap gap-4">
           <a href={flagshipProject.github} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-amber-500/25 px-5 py-3 font-medium text-amber-400 transition hover:bg-amber-500/10">
+            className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10">
             <ExternalLink size={16} aria-hidden="true" /> View Code
           </a>
           <a href={flagshipProject.liveApp} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 font-medium text-black transition hover:bg-amber-400">
+            className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:scale-[1.02]">
             <Globe size={16} aria-hidden="true" /> Launch Live App
           </a>
         </div>
@@ -584,46 +568,46 @@ function ProjectsSection() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.05 }}
-        whileHover={{ y: -3 }}
-        className="mt-8 rounded-[28px] border border-amber-500/15 bg-white/[0.03] p-8 shadow-xl transition-transform"
+        whileHover={{ y: -4 }}
+        className="mt-8 rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-xl transition-transform"
       >
-        <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-amber-600">
-          <span className="rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1">Finance AI</span>
-          <span className="rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1">FP&amp;A Automation</span>
-          <span className="rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1">Live App</span>
+        <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+          <span className="rounded-full border border-white/10 px-3 py-1">Finance AI</span>
+          <span className="rounded-full border border-white/10 px-3 py-1">FP&amp;A Automation</span>
+          <span className="rounded-full border border-white/10 px-3 py-1">Live App</span>
         </div>
         <div className="mt-5 flex items-start gap-4">
-          <div className="rounded-2xl border border-amber-500/20 bg-black/40 p-3 text-amber-500" aria-hidden="true">
+          <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
             <TrendingUp size={24} />
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-white">{fpaProject.title}</h3>
-            <p className="mt-2 text-sm text-gray-500">{fpaProject.subtitle}</p>
+            <h3 className="text-2xl font-semibold">{fpaProject.title}</h3>
+            <p className="mt-2 text-sm text-gray-400">{fpaProject.subtitle}</p>
           </div>
         </div>
         <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">{fpaProject.description}</p>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-gray-500">
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-gray-400">
           Converts raw financial data into decision-ready variance insights in minutes.
         </p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {fpaProject.highlights.map((item) => (
-            <div key={item.label} className="rounded-2xl border border-white/8 bg-black/40 p-4">
+            <div key={item.label} className="rounded-2xl border border-white/10 bg-black/30 p-4">
               <p className="text-sm text-gray-500">{item.label}</p>
-              <p className="mt-2 text-lg font-semibold text-amber-400">{item.value}</p>
+              <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 rounded-[24px] border border-dashed border-amber-500/15 bg-black/20 p-6">
+        <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
           <div className="grid gap-5 md:grid-cols-3">
             {[
               { label: "Problem", text: "Finance teams spend 2–5 days every month-end manually comparing actuals to budget in Excel, writing variance commentary, and sending reports to leadership — a repetitive and error-prone process." },
               { label: "Approach", text: "Built a full pipeline using SQL CTEs for variance analysis, adaptive ML-based anomaly detection, and an LLM prompt chain to generate structured management commentary automatically." },
               { label: "Outcome", text: "Delivered an end-to-end FP&A automation system reducing month-end analysis time from 2–5 days to under 2 minutes, while improving anomaly detection accuracy and standardizing executive reporting." },
             ].map((block) => (
-              <div key={block.label} className="rounded-2xl border border-white/8 bg-white/[0.02] p-5">
-                <p className="text-sm uppercase tracking-[0.18em] text-amber-500">{block.label}</p>
+              <div key={block.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-sm uppercase tracking-[0.18em] text-gray-500">{block.label}</p>
                 <p className="mt-3 leading-7 text-gray-300">{block.text}</p>
               </div>
             ))}
@@ -632,32 +616,32 @@ function ProjectsSection() {
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {fpaProject.bullets.map((bullet, index) => (
-            <div key={index} className="rounded-2xl border border-white/8 bg-black/40 p-4">
+            <div key={index} className="rounded-2xl border border-white/10 bg-black/30 p-4">
               <p className="leading-7 text-gray-300">{bullet}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 rounded-[24px] border border-white/8 bg-black/40 p-6">
-          <p className="text-sm uppercase tracking-[0.18em] text-amber-500">Key Differentiators</p>
+        <div className="mt-6 rounded-[24px] border border-white/10 bg-black/30 p-6">
+          <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Key Differentiators</p>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             {[
               "No data loss via FULL OUTER JOIN-style logic",
               "Smart anomaly detection that avoids false positives",
               "Board-ready AI commentary with finance-style structure",
             ].map((text) => (
-              <div key={text} className="rounded-2xl border border-white/8 bg-white/[0.02] p-4 text-gray-300">{text}</div>
+              <div key={text} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-gray-300">{text}</div>
             ))}
           </div>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-4">
           <a href={fpaProject.liveApp} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 font-medium text-black transition hover:bg-amber-400">
+            className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:scale-[1.02]">
             <Globe size={16} aria-hidden="true" /> Launch Live App
           </a>
           <a href={fpaProject.github} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-amber-500/25 px-5 py-3 font-medium text-amber-400 transition hover:bg-amber-500/10">
+            className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10">
             <ExternalLink size={16} aria-hidden="true" /> View Code
           </a>
         </div>
@@ -671,14 +655,14 @@ function ProjectsSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: idx * 0.06 }}
-            whileHover={{ y: -3 }}
-            className="rounded-[24px] border border-white/8 bg-white/[0.03] p-6"
+            whileHover={{ y: -4 }}
+            className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6"
           >
-            <div className="inline-flex rounded-2xl border border-amber-500/20 bg-black/40 p-3 text-amber-500" aria-hidden="true">
+            <div className="inline-flex rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
               {project.icon}
             </div>
-            <h3 className="mt-5 text-xl font-semibold text-white">{project.title}</h3>
-            <p className="mt-2 text-sm text-gray-500">{project.subtitle}</p>
+            <h3 className="mt-5 text-xl font-semibold">{project.title}</h3>
+            <p className="mt-2 text-sm text-gray-400">{project.subtitle}</p>
             <p className="mt-4 leading-7 text-gray-300">{project.description}</p>
             <div className="mt-5"><BulletList items={project.bullets} /></div>
           </motion.div>
@@ -698,12 +682,12 @@ function SkillsSection() {
       />
       <div className="grid gap-6 lg:grid-cols-2">
         {Object.entries(skillsData).map(([category, skills], index) => (
-          <div key={category} className="rounded-[24px] border border-white/8 bg-white/[0.03] p-6">
+          <div key={category} className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
             <div className="flex items-center gap-3">
-              <div className="rounded-2xl border border-amber-500/20 bg-black/40 p-3 text-amber-500" aria-hidden="true">
+              <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
                 {SKILL_ICONS[index]}
               </div>
-              <h3 className="text-xl font-semibold text-white">{category}</h3>
+              <h3 className="text-xl font-semibold">{category}</h3>
             </div>
             <div className="mt-5 flex flex-wrap gap-3" role="list" aria-label={`${category} skills`}>
               {skills.map((skill) => (
@@ -717,16 +701,16 @@ function SkillsSection() {
         ))}
       </div>
 
-      <div className="mt-8 rounded-[24px] border border-white/8 bg-white/[0.03] p-6">
+      <div className="mt-8 rounded-[24px] border border-white/10 bg-white/[0.04] p-6">
         <div className="flex items-center gap-3">
-          <div className="rounded-2xl border border-amber-500/20 bg-black/40 p-3 text-amber-500" aria-hidden="true">
+          <div className="rounded-2xl border border-white/10 bg-black/40 p-3 text-gray-300" aria-hidden="true">
             <Award size={22} />
           </div>
-          <h3 className="text-xl font-semibold text-white">Certifications</h3>
+          <h3 className="text-xl font-semibold">Certifications</h3>
         </div>
         <div className="mt-5 grid gap-3 md:grid-cols-2">
           {certifications.map((cert) => (
-            <div key={cert} className="rounded-2xl border border-white/8 bg-black/40 p-4 text-gray-300">{cert}</div>
+            <div key={cert} className="rounded-2xl border border-white/10 bg-black/30 p-4 text-gray-300">{cert}</div>
           ))}
         </div>
       </div>
@@ -737,9 +721,9 @@ function SkillsSection() {
 function ContactSection() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
-      <div className="rounded-[30px] border border-amber-500/15 bg-white/[0.03] p-8 md:p-10">
-        <p className="text-sm uppercase tracking-[0.22em] text-amber-500">Contact</p>
-        <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Let&apos;s connect</h2>
+      <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-8 md:p-10">
+        <p className="text-sm uppercase tracking-[0.22em] text-gray-500">Contact</p>
+        <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Let&apos;s connect</h2>
         <p className="mt-5 max-w-3xl leading-8 text-gray-300">
           I&apos;m actively interested in business analytics, operations, supply chain, BI, and
           data-focused roles where analytical work can directly improve planning, performance,
@@ -752,23 +736,22 @@ function ContactSection() {
             { href: "https://github.com/garvit-mittal04", icon: <ExternalLink size={18} />, label: "GitHub", sub: "Explore code and project work", target: "_blank" },
           ].map((item) => (
             <a key={item.label} href={item.href} target={item.target} rel={item.target ? "noreferrer" : undefined}
-              className="rounded-2xl border border-white/8 bg-black/40 p-5 transition hover:border-amber-500/25 hover:bg-amber-500/5">
-              <div className="flex items-center gap-3 text-amber-400">
+              className="rounded-2xl border border-white/10 bg-black/40 p-5 transition hover:bg-white/10">
+              <div className="flex items-center gap-3 text-white">
                 {item.icon}
                 <span className="font-medium">{item.label}</span>
               </div>
-              <p className="mt-3 text-gray-400">{item.sub}</p>
+              <p className="mt-3 text-gray-300">{item.sub}</p>
             </a>
           ))}
         </div>
-        <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-gray-500">
-          <div className="inline-flex items-center gap-2">
+        <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-gray-400">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2">
             <MapPin size={14} aria-hidden="true" /> Dallas, Texas
           </div>
-          <span>·</span>
           <a href={flagshipProject.github} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-1.5 transition hover:text-amber-400">
-            <ExternalLink size={13} aria-hidden="true" /> View GitHub
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:bg-white/10">
+            <ExternalLink size={14} aria-hidden="true" /> View GitHub
           </a>
         </div>
       </div>
@@ -820,68 +803,61 @@ export default function GarvitPortfolio() {
   };
 
   return (
-    <main className="min-h-screen bg-[#080705] text-white selection:bg-amber-400 selection:text-black">
+    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
       {/* Background glows */}
       <div className="pointer-events-none fixed inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-amber-500/5 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-[340px] w-[340px] rounded-full bg-amber-400/4 blur-3xl" />
-        <div className="absolute bottom-20 left-0 h-[280px] w-[280px] rounded-full bg-amber-600/3 blur-3xl" />
+        <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute bottom-20 left-0 h-[260px] w-[260px] rounded-full bg-white/5 blur-3xl" />
       </div>
 
       {/* ── Header ── */}
       <header
         ref={headerRef}
-        className="sticky top-0 z-50 border-b border-white/8 bg-[#080705]/85 backdrop-blur-xl"
+        className="sticky top-0 z-50 border-b border-white/10 bg-black/75 backdrop-blur-xl"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
           <button
             onClick={() => goTo(null, -1)}
-            className="text-lg font-semibold tracking-wide text-white transition hover:text-amber-400"
+            className="text-lg font-semibold tracking-wide transition hover:text-gray-300"
           >
             Garvit Mittal
           </button>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-2 md:flex" aria-label="Main navigation">
             {navLinks.map((item) => {
               const isActive = activeTab === item.href;
               return (
-                <button
-                  key={item.href}
-                  onClick={() => goTo(item.href)}
+                <button key={item.href} onClick={() => goTo(item.href)}
                   aria-current={isActive ? "page" : undefined}
                   className={`rounded-full px-4 py-2 text-sm transition ${
-                    isActive
-                      ? "bg-amber-500 text-black font-medium"
-                      : "text-gray-400 hover:bg-white/5 hover:text-white"
-                  }`}
-                >
+                    isActive ? "bg-white text-black" : "text-gray-300 hover:bg-white/10 hover:text-white"
+                  }`}>
                   {item.label}
                 </button>
               );
             })}
           </nav>
 
-          <button
-            onClick={() => setMenuOpen((prev) => !prev)}
-            className="rounded-xl border border-white/10 p-2 text-gray-400 md:hidden"
+          <button onClick={() => setMenuOpen((prev) => !prev)}
+            className="rounded-xl border border-white/10 p-2 md:hidden"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={menuOpen}
-          >
+            aria-expanded={menuOpen}>
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {menuOpen && (
-          <div className="border-t border-white/8 px-6 pb-4 md:hidden">
-            <nav className="mt-4 flex flex-col gap-1 rounded-2xl border border-white/8 bg-white/[0.03] p-3" aria-label="Mobile navigation">
+          <div className="border-t border-white/10 px-6 pb-4 md:hidden">
+            <nav className="mt-4 flex flex-col gap-2 rounded-2xl border border-white/10 bg-white/5 p-3" aria-label="Mobile navigation">
               <button onClick={() => goTo(null, -1)}
-                className="rounded-xl px-3 py-2 text-left text-gray-400 transition hover:bg-white/5 hover:text-white">
+                className="rounded-xl px-3 py-2 text-left text-gray-300 transition hover:bg-white/10 hover:text-white">
                 Home
               </button>
               {navLinks.map((item) => (
                 <button key={item.href} onClick={() => goTo(item.href)}
-                  className={`rounded-xl px-3 py-2 text-left transition hover:bg-white/5 hover:text-white ${
-                    activeTab === item.href ? "bg-amber-500/10 text-amber-400" : "text-gray-400"
+                  className={`rounded-xl px-3 py-2 text-left transition hover:bg-white/10 hover:text-white ${
+                    activeTab === item.href ? "bg-white/10 text-white" : "text-gray-300"
                   }`}>
                   {item.label}
                 </button>
@@ -911,50 +887,32 @@ export default function GarvitPortfolio() {
       {/* ── Prev / Next navigation ── */}
       <div className="mx-auto max-w-7xl px-6 pb-16 pt-2 md:px-8">
         <div className="flex items-center justify-between">
-          <button
-            onClick={goPrev}
-            disabled={!hasPrev}
+          <button onClick={goPrev} disabled={!hasPrev}
             className={`inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium transition ${
-              hasPrev
-                ? "border-white/10 text-gray-400 hover:border-amber-500/25 hover:text-amber-400"
-                : "cursor-not-allowed border-white/5 text-gray-700"
-            }`}
-          >
+              hasPrev ? "border-white/15 text-gray-200 hover:bg-white/10" : "cursor-not-allowed border-white/5 text-gray-600"
+            }`}>
             <ArrowLeft size={16} aria-hidden="true" />
             {currentIndex === 0 ? "Home" : currentIndex > 0 ? navLinks[currentIndex - 1].label : ""}
           </button>
 
-          {/* Dot indicators */}
           <div className="flex items-center gap-2" aria-label="Page indicators">
             {[null, ...TAB_ORDER].map((tab) => {
               const isActive = activeTab === tab;
               return (
-                <button
-                  key={tab ?? "home"}
-                  onClick={() => goTo(tab)}
+                <button key={tab ?? "home"} onClick={() => goTo(tab)}
                   aria-label={tab ? navLinks.find((n) => n.href === tab)?.label : "Home"}
                   className={`rounded-full transition-all ${
-                    isActive ? "h-2.5 w-6 bg-amber-500" : "h-2 w-2 bg-white/20 hover:bg-white/40"
-                  }`}
-                />
+                    isActive ? "h-2.5 w-6 bg-white" : "h-2 w-2 bg-white/25 hover:bg-white/50"
+                  }`} />
               );
             })}
           </div>
 
-          <button
-            onClick={goNext}
-            disabled={!hasNext}
+          <button onClick={goNext} disabled={!hasNext}
             className={`inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium transition ${
-              hasNext
-                ? "border-white/10 text-gray-400 hover:border-amber-500/25 hover:text-amber-400"
-                : "cursor-not-allowed border-white/5 text-gray-700"
-            }`}
-          >
-            {activeTab === null
-              ? navLinks[0].label
-              : currentIndex < TAB_ORDER.length - 1
-              ? navLinks[currentIndex + 1].label
-              : ""}
+              hasNext ? "border-white/15 text-gray-200 hover:bg-white/10" : "cursor-not-allowed border-white/5 text-gray-600"
+            }`}>
+            {activeTab === null ? navLinks[0].label : currentIndex < TAB_ORDER.length - 1 ? navLinks[currentIndex + 1].label : ""}
             <ArrowRight size={16} aria-hidden="true" />
           </button>
         </div>
