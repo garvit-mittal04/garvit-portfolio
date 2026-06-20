@@ -420,48 +420,6 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             to solve real business problems — not just build technical demos.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85 }}
-            className="mt-8 flex flex-wrap gap-4"
-          >
-            <button
-              onClick={() => onNav("projects")}
-              className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3 font-medium text-white shadow-lg shadow-indigo-500/25 transition hover:scale-[1.03] hover:shadow-indigo-500/40"
-            >
-              View Projects
-              <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
-            </button>
-            <a
-              href="mailto:garvitm534@gmail.com"
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-6 py-3 font-medium text-gray-200 transition hover:bg-white/10"
-            >
-              <Mail size={16} aria-hidden="true" /> Get in Touch
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.92 }}
-            className="mt-6 flex items-center gap-5 text-sm text-gray-500"
-          >
-            <a href="https://github.com/garvit-mittal04" target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-1.5 transition hover:text-white">
-              <ExternalLink size={13} aria-hidden="true" /> GitHub
-            </a>
-            <span className="text-gray-700">·</span>
-            <a href="https://www.linkedin.com/in/garvit-mittal04/" target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-1.5 transition hover:text-white">
-              <ExternalLink size={13} aria-hidden="true" /> LinkedIn
-            </a>
-            <span className="text-gray-700">·</span>
-            <a href="mailto:garvitm534@gmail.com"
-              className="inline-flex items-center gap-1.5 transition hover:text-white">
-              <Mail size={13} aria-hidden="true" /> garvitm534@gmail.com
-            </a>
-          </motion.div>
         </div>
 
         {/* Stats card */}
