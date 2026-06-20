@@ -281,7 +281,7 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
 }
 
 // Tilt card with glow on hover
-function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function TiltCard({ children, className = "", style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
@@ -302,7 +302,7 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
       onMouseLeave={() => { setTilt({ x: 0, y: 0 }); setHovered(false); }}
       animate={{ rotateX: tilt.x, rotateY: tilt.y, scale: hovered ? 1.02 : 1 }}
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+      style={{ transformStyle: "preserve-3d", perspective: 1000, ...style }}
       className={`relative ${className}`}
     >
       {hovered && (
