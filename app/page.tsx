@@ -223,8 +223,7 @@ const educationData = [
     degree: "Master of Science in Business Analytics & Artificial Intelligence",
     school: "The University of Texas at Dallas",
     period: "Aug 2025 – Expected May 2027",
-    gpa: "GPA: 3.44 / 4.0",
-    details: "Relevant Coursework: Data Analytics, Advanced Statistics, A/B Testing, Applied Econometrics, Operations Management.",
+    details: "Relevant Coursework: Data Analytics, Advanced Statistics, A/B Testing, Applied Econometrics, Operations Management",
   },
   {
     degree: "Bachelor of Business Administration (Hons.) – Finance",
@@ -362,7 +361,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-sm text-indigo-300"
           >
             <Sparkles size={15} aria-hidden="true" />
-            MS Business Analytics &amp; AI · UT Dallas · GPA 3.44
+            MS Business Analytics &amp; AI · UT Dallas
           </motion.div>
 
           <motion.div
