@@ -223,13 +223,12 @@ const educationData = [
     degree: "Master of Science in Business Analytics & Artificial Intelligence",
     school: "The University of Texas at Dallas",
     period: "Aug 2025 – Expected May 2027",
-    details: "Relevant Coursework: Data Analytics, Advanced Statistics, A/B Testing, Applied Econometrics, Operations Management",
+    details: "Relevant Coursework: Data Analytics, Advanced Statistics, A/B Testing, Applied Econometrics, Operations Management.",
   },
   {
     degree: "Bachelor of Business Administration (Hons.) – Finance",
     school: "Christ University, Bangalore",
     period: "May 2025",
-    gpa: null,
     details: "Built a foundation in finance, accounting, business analysis, and quantitative decision-making.",
   },
 ];
@@ -361,7 +360,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-sm text-indigo-300"
           >
             <Sparkles size={15} aria-hidden="true" />
-            MS Business Analytics &amp; AI · UT Dallas
+            MS Business Analytics &amp; AI · UT Dallas · GPA 3.44
           </motion.div>
 
           <motion.div
@@ -514,11 +513,6 @@ function EducationSection() {
                   <div>
                     <h3 className="text-xl font-semibold">{item.degree}</h3>
                     <p className="mt-1 text-gray-400">{item.school}</p>
-                    {item.gpa && (
-                      <span className="mt-2 inline-block rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-0.5 text-sm text-indigo-300">
-                        {item.gpa}
-                      </span>
-                    )}
                     <p className="mt-3 max-w-3xl leading-7 text-gray-300">{item.details}</p>
                   </div>
                 </div>
