@@ -360,7 +360,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-sm text-indigo-300"
           >
             <Sparkles size={15} aria-hidden="true" />
-            MS Business Analytics &amp; AI · UT Dallas · GPA 3.44
+            MS Business Analytics &amp; AI · UT Dallas
           </motion.div>
 
           <motion.div
