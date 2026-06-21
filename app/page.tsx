@@ -222,7 +222,7 @@ const educationData = [
   {
     degree: "Master of Science in Business Analytics & Artificial Intelligence",
     school: "The University of Texas at Dallas",
-    period: "Aug 2025 – Expected May 2027",
+    period: "Aug 2025 – Present",
     details: "Relevant Coursework: Data Analytics, Advanced Statistics, A/B Testing, Applied Econometrics, Operations Management.",
   },
   {
