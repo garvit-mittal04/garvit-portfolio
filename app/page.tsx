@@ -52,8 +52,8 @@ const experienceData = [
   {
     role: "Operations Analyst Intern",
     company: "The Chicago School",
-    period: "Jun 2026 – Present",
-    badge: "Current",
+    period: "Jun 2026 – August 2026",
+    badge: null,
     points: [
       "Lead process discovery and automation initiatives across 5+ university departments, scoping inefficiencies and deploying Power Automate and Power Apps solutions that reduce manual task volume by an estimated 20–35%.",
       "Engineer end-to-end automated workflows replacing high-frequency manual processes — including form routing, approval chains, and data handoffs — improving reporting accuracy and freeing 5–10 hours/week of staff capacity per department.",
@@ -361,19 +361,6 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
           >
             <Sparkles size={15} aria-hidden="true" />
             MS Business Analytics &amp; AI · UT Dallas
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.48 }}
-            className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Currently: Operations Analyst Intern @ The Chicago School
           </motion.div>
 
           <motion.p
