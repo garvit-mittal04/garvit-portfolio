@@ -55,7 +55,7 @@ const experienceData = [
     period: "Jun 2026 – August 2026",
     badge: null,
     points: [
-      "Architected and deployed 7 production Power Automate flows across 2 SharePoint Lists (28 and 23 tracked fields), automating onboarding for 100+ new hires/month and eliminating single-point-of-failure dependency on 1 HR staff member.",
+      "Architected and deployed 7 production Power Automate flows across SharePoint Lists (28 and 23 tracked fields), automating onboarding for 1000+ new hires/month and eliminating single-point-of-failure dependency on 1 HR staff member.",
       "Engineered multi-branch conditional logic across employee type, rehire status, location, and I-9 compliance stage to dynamically route 12 email templates, cutting onboarding processing time by ~90%.",
       "Automated I-9 compliance tracking, document-chase escalation, and completion notifications on daily scheduled triggers with 3-day recurring cycles, removing manual monitoring from HR's workflow entirely.",
       "Delivered automated Microsoft Teams provisioning across 5 campus-specific channels and authored full system documentation and maintenance ownership handoff for the live production system.",
