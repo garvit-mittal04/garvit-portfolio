@@ -55,10 +55,10 @@ const experienceData = [
     period: "Jun 2026 – August 2026",
     badge: null,
     points: [
-      "Lead process discovery and automation initiatives across 5+ university departments, scoping inefficiencies and deploying Power Automate and Power Apps solutions that reduce manual task volume by an estimated 20–35%.",
-      "Engineer end-to-end automated workflows replacing high-frequency manual processes — including form routing, approval chains, and data handoffs — improving reporting accuracy and freeing 5–10 hours/week of staff capacity per department.",
-      "Build Power BI dashboards tracking KPIs and solution impact metrics for senior leadership, enabling data-driven evaluation of ongoing process improvement initiatives across a fully remote university environment.",
-      "Deliver structured process documentation and SOPs for 5+ operational functions, reducing onboarding ambiguity and establishing repeatable workflow standards that improve cross-departmental consistency.",
+      "Architected and deployed 7 production Power Automate flows across 2 SharePoint Lists (28 and 23 tracked fields), automating onboarding for 100+ new hires/month and eliminating single-point-of-failure dependency on 1 HR staff member.",
+      "Engineered multi-branch conditional logic across employee type, rehire status, location, and I-9 compliance stage to dynamically route 12 email templates, cutting onboarding processing time by ~90%.",
+      "Automated I-9 compliance tracking, document-chase escalation, and completion notifications on daily scheduled triggers with 3-day recurring cycles, removing manual monitoring from HR's workflow entirely.",
+      "Delivered automated Microsoft Teams provisioning across 5 campus-specific channels and authored full system documentation and maintenance ownership handoff for the live production system.",
     ],
   },
   {
