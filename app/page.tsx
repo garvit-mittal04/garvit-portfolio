@@ -64,7 +64,7 @@ const experienceData = [
   {
     role: "Business Analyst",
     company: "JityAI",
-    period: "Jan 2025 – Aug 2025",
+    period: "Jan 2025 – Oct 2025",
     badge: null,
     points: [
       "Analyzed 10,000+ SKU-level pricing, sales, and inventory records for retail clients, identifying demand patterns and pricing gaps that informed product setup, inventory allocation, and replenishment decisions.",
@@ -75,7 +75,7 @@ const experienceData = [
   {
     role: "Operations & Business Analyst",
     company: "Harsiddhi Foods Pvt. Ltd.",
-    period: "Apr 2025 – Jul 2025",
+    period: "Jan 2024 – Nov 2024",
     badge: null,
     points: [
       "Queried and analyzed 20,000+ procurement, production, and export records in SQL and Excel, surfacing supplier pricing gaps and cost variances that directly informed sourcing decisions and operational reviews.",
@@ -220,7 +220,7 @@ const quickStats = [
 
 const educationData = [
   {
-    degree: "Master of Science in Business Analytics & Artificial Intelligence",
+    degree: "Master of Science in Business Analytics & Artificial Intelligence (Remote)",
     school: "The University of Texas at Dallas",
     period: "Aug 2025 – Present",
     details: "Relevant Coursework: Data Analytics, Advanced Statistics, A/B Testing, Applied Econometrics, Operations Management.",
@@ -360,7 +360,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-sm text-indigo-300"
           >
             <Sparkles size={15} aria-hidden="true" />
-            MS Business Analytics &amp; AI · UT Dallas
+            MS Business Analytics &amp; AI · UT Dallas (Remote)
           </motion.div>
 
           <motion.p
@@ -888,7 +888,7 @@ function ContactSection() {
         </div>
         <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-gray-400">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2">
-            <MapPin size={14} aria-hidden="true" /> Dallas, Texas
+            <MapPin size={14} aria-hidden="true" /> Chandigarh, India
           </div>
           <a href={flagshipProject.github} target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:border-indigo-500/30 hover:bg-indigo-500/5 hover:text-indigo-300">
