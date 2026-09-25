@@ -978,6 +978,12 @@ function ProjectsSection() {
               </div>
             </div>
 
+            <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10">
+              <img src="/fpa-ai-agent.png"
+                alt="FP&A AI Analyst Agent: department variance vs budget, AI commentary and the five-step pipeline"
+                className="w-full" />
+            </div>
+
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {fpaProject.bullets.map((bullet, index) => (
                 <div key={index}
