@@ -143,6 +143,29 @@ const fpaProject = {
   liveApp: "https://fpa-ai-agent-garvit.streamlit.app",
 };
 
+const processXrayProject = {
+  title: "Process X-Ray",
+  subtitle: "Multi-Agent AI · Python · Gemini & Groq LLMs · Process Mining · Streamlit",
+  description:
+    "An AI system that reads a small business's WhatsApp order group and shows where time is really lost. Five AI agents rebuild the real process, trace every order message by message, design automations and challenge them, then a deterministic replay engine re-runs the business's own history to prove what would have changed.",
+  highlights: [
+    { label: "Waiting removed", value: "28.6 h / week" },
+    { label: "Goods dispatched sooner", value: "9.3 h per order" },
+    { label: "AI agents", value: "5 incl. devil's advocate" },
+    { label: "Cost to run", value: "₹0 (free tiers)" },
+  ],
+  bullets: [
+    "Built a 5-agent LLM pipeline (Mapper, Event-log Tracer, Analyst, Recommender, Devil's Advocate) that turns an unstructured, Hinglish WhatsApp export into a structured event log, tracing 32 interleaved orders across 536 messages.",
+    "Designed a counterfactual replay engine that re-runs real order timelines with automation rules applied, measuring waits in working hours instead of estimating savings with formulas.",
+    "Caught an AI failure where the model claimed 237 h/week of savings by 'speeding up' customer payments; replaced prompt instructions with code-enforced guardrails so only waits an automation controls can be shortened.",
+    "Engineered a free-tier resilience layer: Gemini → Groq fallback chain with per-minute vs daily quota cooldowns, adaptive token budgets, chunked processing of long chats, and per-visitor key isolation.",
+    "Built privacy in from the start: participant, customer, phone and email masking before any AI call, in-memory processing with no storage, and AI-generated flowcharts rendered in a sandboxed frame.",
+    "Shipped a Streamlit app with a custom ledger-inspired design, instant demo mode, one-click sample analysis, Word report export, and a known-answer test suite (8/8 checks) validating the pipeline against ground truth.",
+  ],
+  github: "https://github.com/garvit-mittal04/process-xray",
+  liveApp: "https://process-xray.streamlit.app",
+};
+
 const projectData = [
   {
     icon: <LineChart size={22} />,
@@ -192,6 +215,7 @@ const skillsData = {
     "SQL (Joins, CTEs, Window Functions, Stored Procedures)", "Python (Pandas, NumPy, Scikit-learn)",
     "R", "Excel (PivotTables, Power Query, VBA)", "Power Automate", "ETL & Data Cleaning",
     "Facebook Prophet", "SHAP Explainability",
+    "LLM Agents (Gemini, Groq)", "Prompt Engineering", "Process Mining",
   ],
   "BI & Visualization": [
     "Power BI (DAX)", "Tableau", "KPI Dashboards", "Data Storytelling",
@@ -564,6 +588,7 @@ function ExperienceSection() {
 }
 
 function ProjectsSection() {
+  const { ref: ref0, isInView: inView0 } = useScrollReveal();
   const { ref: ref1, isInView: inView1 } = useScrollReveal();
   const { ref: ref2, isInView: inView2 } = useScrollReveal();
   const { ref: ref3, isInView: inView3 } = useScrollReveal();
@@ -575,6 +600,108 @@ function ProjectsSection() {
         title="Featured work"
         subtitle="Production-grade systems built around business problems, measurable outcomes, and usable decision tools."
       />
+
+      {/* ── Process X-Ray (latest) ── */}
+      <motion.div
+        ref={ref0}
+        initial={{ opacity: 0, y: 28 }}
+        animate={inView0 ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="mb-8"
+      >
+        <TiltCard className="rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-2xl"
+          style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.06) 0%, rgba(0,0,0,0.5) 100%)" } as React.CSSProperties}>
+          <div className="p-8">
+            <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+              <span className="rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 text-sky-300">Latest Project</span>
+              <span className="rounded-full border border-white/10 px-3 py-1">Multi-Agent AI</span>
+              <span className="rounded-full border border-white/10 px-3 py-1">Process Mining</span>
+              <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300">Live App</span>
+            </div>
+            <div className="mt-5 flex items-start gap-4">
+              <div className="rounded-2xl border border-sky-500/20 bg-sky-500/10 p-3 text-sky-300" aria-hidden="true">
+                <BrainCircuit size={24} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  {processXrayProject.title}
+                </h3>
+                <p className="mt-2 text-sm text-gray-400">{processXrayProject.subtitle}</p>
+              </div>
+            </div>
+            <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">{processXrayProject.description}</p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {processXrayProject.highlights.map((item) => (
+                <div key={item.label}
+                  className="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4 transition hover:border-sky-500/40 hover:bg-sky-500/10">
+                  <p className="text-sm text-gray-500">{item.label}</p>
+                  <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
+              <div className="grid gap-5 md:grid-cols-3">
+                {[
+                  { label: "Problem", text: "Millions of Indian small businesses run operations on WhatsApp, not ERPs. Orders wait on stock replies, approvals and chasers, but the delays are buried in hundreds of messages, and ERP-based process-mining tools can't read a group chat." },
+                  { label: "Approach", text: "Five LLM agents rebuild the process and trace every order through the interleaved chat. Deterministic code measures waits in working hours, enforces guardrails on what can be sped up, and replays the real history with the approved automations." },
+                  { label: "Outcome", text: "On a two-month, 32-order sample: 28.6 h of waiting removed per week, goods dispatched 9.3 working hours sooner, 18 reminder messages avoided. Live, free, private, and needs no sign-up or API key." },
+                ].map((block) => (
+                  <div key={block.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                    <p className="text-sm uppercase tracking-[0.18em] text-sky-400">{block.label}</p>
+                    <p className="mt-3 leading-7 text-gray-300">{block.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10">
+              <img src="/process-xray.png"
+                alt="Process X-Ray: an order's journey today versus with automations, replayed from real chat history"
+                className="w-full" />
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {processXrayProject.bullets.map((bullet, index) => (
+                <div key={index}
+                  className="rounded-2xl border border-white/10 bg-black/30 p-4 transition hover:border-sky-500/20 hover:bg-sky-500/5">
+                  <p className="leading-7 text-gray-300">{bullet}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-[24px] border border-white/10 bg-black/30 p-6">
+              <p className="text-sm uppercase tracking-[0.18em] text-sky-400">Key Differentiators</p>
+              <div className="mt-4 grid gap-3 md:grid-cols-3">
+                {[
+                  "Replays the business's real history instead of estimating savings with formulas",
+                  "Code-enforced guardrails: the AI proposes, the code measures",
+                  "Reads WhatsApp, the data India's MSMEs actually have",
+                ].map((text) => (
+                  <div key={text} className="flex gap-3 rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4 text-gray-300">
+                    <ShieldCheck size={16} className="shrink-0 mt-0.5 text-sky-400" />
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href={processXrayProject.liveApp} target="_blank" rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-500 px-5 py-3 font-medium text-white shadow-lg shadow-sky-500/25 transition hover:scale-[1.02] hover:shadow-sky-500/40">
+                <Globe size={16} aria-hidden="true" />
+                Launch Live App
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </a>
+              <a href={processXrayProject.github} target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10">
+                <ExternalLink size={16} aria-hidden="true" /> View Code
+              </a>
+            </div>
+          </div>
+        </TiltCard>
+      </motion.div>
 
       {/* ── Warehouse Flagship ── */}
       <motion.div
@@ -829,7 +956,7 @@ function SkillsSection() {
         className="mt-6 rounded-[24px] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
       >
         <div className="flex items-center gap-3">
-          <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-3 text-amber-300" aria-hidden="true">
+          <div className="rounded-2xl border border-violet-500/20 bg-violet-500/10 p-3 text-violet-300" aria-hidden="true">
             <Award size={22} />
           </div>
           <h3 className="text-xl font-semibold">Certifications</h3>
@@ -837,8 +964,8 @@ function SkillsSection() {
         <div className="mt-5 grid gap-3 md:grid-cols-2">
           {certifications.map((cert) => (
             <div key={cert}
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 p-4 text-gray-300 transition hover:border-amber-500/20 hover:bg-amber-500/5">
-              <Zap size={14} className="shrink-0 text-amber-400" />
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 p-4 text-gray-300 transition hover:border-violet-500/20 hover:bg-violet-500/5">
+              <Zap size={14} className="shrink-0 text-violet-400" />
               {cert}
             </div>
           ))}
