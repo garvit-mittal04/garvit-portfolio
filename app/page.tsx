@@ -166,6 +166,38 @@ const processXrayProject = {
   liveApp: "https://process-xray.streamlit.app",
 };
 
+const challengeProject = {
+  title: "60-Day Claude AI Build Challenge",
+  subtitle: "AB Talks #60DayClaudeChallenge · Jun–Jul 2026 · Prompt Engineering · AI Apps · Multi-Agent Systems · Product Launch",
+  description:
+    "Built and shipped something every day for 60 days, progressing from prompt engineering fundamentals to custom Claude skills, business simulators and multi-agent systems, and ending in a 10-day capstone that took Kickoff from product discovery to a live v1.0.0 launch.",
+  highlights: [
+    { label: "Days shipped", value: "60 / 60" },
+    { label: "Interactive apps built", value: "40" },
+    { label: "Commits", value: "70" },
+    { label: "Capstone to launch", value: "10 days" },
+  ],
+  journey: [
+    { days: "Days 1–7", title: "Prompt foundations", text: "Role-based and chain-of-thought prompting, context engineering, model selection and reasoning strategy." },
+    { days: "Days 8–20", title: "First AI apps and skills", text: "AI dashboards, a nutrition analytics app, this portfolio site, an ATS resume optimizer and custom Claude skills." },
+    { days: "Days 21–31", title: "Business simulators", text: "Startup validation reports, prior-authorization and hospital admission simulators, and a supply chain control tower." },
+    { days: "Days 32–45", title: "Learning tools", text: "Marketing strategy and prompt puzzles, a SQL window functions studio, PDF tools and a personal finance command center." },
+    { days: "Days 46–50", title: "Multi-agent AI", text: "A 6-agent autonomous loop, 6 parallel multimodal reviewers, an LLM comparison builder and an adversarial interview simulator." },
+    { days: "Days 51–60", title: "Capstone: Kickoff", text: "PRD, pitch deck and system design, then Cloudflare Workers AI, KV permalinks, a release audit and the v1.0.0 launch." },
+  ],
+  bullets: [
+    "Shipped a build every day for 60 days in the AB Talks #60DayClaudeChallenge: 40 single-file interactive HTML apps, documented across 70 commits with daily write-ups and screenshots.",
+    "Progressed from prompt engineering to custom Claude skills and multi-agent systems, including a 6-agent autonomous loop with plateau, threshold and cap stop conditions, and 6 parallel multimodal AI reviewers.",
+    "Built operations simulators grounded in real workflows: prior authorization and hospital admission, a randomized supply-chain crisis, and a real-time supply chain control tower tracking 8 KPIs.",
+    "Produced consulting-grade strategy deliverables: a startup validation report (TAM/SAM/SOM, founder-market fit 78/100, go/no-go with a kill switch) and a 14-section business strategy report.",
+    "Capstone: took Kickoff from product discovery to launch in 10 days, with a PRD, pitch deck, 5 system-design docs, Cloudflare Workers AI (Llama 3.2), KV-backed permalinks and a v1.0.0 release.",
+    "Ran the launch like a product: an hour-by-hour launch plan, LinkedIn plus 3 Reddit communities, 15 personal outreach messages, metrics snapshots and a written retrospective with a 30-day growth plan.",
+  ],
+  repo: "https://github.com/garvit-mittal04/claude-60-days-challenge",
+  kickoffLive: "https://kickoff-5r0.pages.dev",
+  kickoffCode: "https://github.com/garvit-mittal04/kickoff",
+};
+
 const projectData = [
   {
     icon: <LineChart size={22} />,
@@ -589,6 +621,7 @@ function ExperienceSection() {
 
 function ProjectsSection() {
   const { ref: ref0, isInView: inView0 } = useScrollReveal();
+  const { ref: refChallenge, isInView: inViewChallenge } = useScrollReveal();
   const { ref: ref1, isInView: inView1 } = useScrollReveal();
   const { ref: ref2, isInView: inView2 } = useScrollReveal();
   const { ref: ref3, isInView: inView3 } = useScrollReveal();
@@ -697,6 +730,111 @@ function ProjectsSection() {
               <a href={processXrayProject.github} target="_blank" rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10">
                 <ExternalLink size={16} aria-hidden="true" /> View Code
+              </a>
+            </div>
+          </div>
+        </TiltCard>
+      </motion.div>
+
+      {/* ── 60-Day Claude AI Build Challenge ── */}
+      <motion.div
+        ref={refChallenge}
+        initial={{ opacity: 0, y: 28 }}
+        animate={inViewChallenge ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="mb-8"
+      >
+        <TiltCard className="rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-2xl"
+          style={{ background: "linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(0,0,0,0.5) 100%)" } as React.CSSProperties}>
+          <div className="p-8">
+            <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+              <span className="rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-indigo-300">60-Day Challenge</span>
+              <span className="rounded-full border border-white/10 px-3 py-1">AB Talks · Claude AI</span>
+              <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300">Completed</span>
+            </div>
+            <div className="mt-5 flex items-start gap-4">
+              <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/10 p-3 text-indigo-300" aria-hidden="true">
+                <Sparkles size={24} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  {challengeProject.title}
+                </h3>
+                <p className="mt-2 text-sm text-gray-400">{challengeProject.subtitle}</p>
+              </div>
+            </div>
+            <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">{challengeProject.description}</p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {challengeProject.highlights.map((item) => (
+                <div key={item.label}
+                  className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 transition hover:border-indigo-500/40 hover:bg-indigo-500/10">
+                  <p className="text-sm text-gray-500">{item.label}</p>
+                  <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10">
+              <img src="/challenge-60-days.png"
+                alt="60-Day Claude AI Build Challenge: one square per day across six phases, ending in the Kickoff launch"
+                className="w-full" />
+            </div>
+
+            <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
+              <p className="text-sm uppercase tracking-[0.18em] text-indigo-400">The Journey</p>
+              <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {challengeProject.journey.map((phase, i) => (
+                  <div key={phase.days}
+                    className={`rounded-2xl border p-5 ${i === challengeProject.journey.length - 1
+                      ? "border-violet-500/30 bg-violet-500/10"
+                      : "border-white/10 bg-white/[0.03]"}`}>
+                    <p className="text-xs uppercase tracking-[0.18em] text-indigo-300">{phase.days}</p>
+                    <p className="mt-2 font-semibold text-white">{phase.title}</p>
+                    <p className="mt-2 text-sm leading-6 text-gray-400">{phase.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-col gap-4 rounded-[24px] border border-violet-500/25 bg-violet-500/5 p-6 md:flex-row md:items-center md:justify-between">
+              <div className="flex gap-4">
+                <div className="rounded-2xl border border-violet-500/20 bg-violet-500/10 p-3 text-violet-300" aria-hidden="true">
+                  <Target size={22} />
+                </div>
+                <div>
+                  <p className="text-sm uppercase tracking-[0.18em] text-violet-400">Capstone · Kickoff v1.0.0</p>
+                  <p className="mt-2 text-lg font-semibold text-white">The analysis brief you write before you write any SQL.</p>
+                  <p className="mt-2 max-w-3xl leading-7 text-gray-300">
+                    For analysts and ops teams handed vague executive questions: an AI interview turns the question into a structured analysis brief with a shareable permalink. Built on Cloudflare Pages, Workers AI and KV.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {challengeProject.bullets.map((bullet, index) => (
+                <div key={index}
+                  className="rounded-2xl border border-white/10 bg-black/30 p-4 transition hover:border-indigo-500/20 hover:bg-indigo-500/5">
+                  <p className="leading-7 text-gray-300">{bullet}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href={challengeProject.kickoffLive} target="_blank" rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-3 font-medium text-white shadow-lg shadow-indigo-500/25 transition hover:scale-[1.02] hover:shadow-indigo-500/40">
+                <Globe size={16} aria-hidden="true" />
+                Launch Kickoff
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </a>
+              <a href={challengeProject.repo} target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10">
+                <ExternalLink size={16} aria-hidden="true" /> 60-Day Challenge Repo
+              </a>
+              <a href={challengeProject.kickoffCode} target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10">
+                <ExternalLink size={16} aria-hidden="true" /> Kickoff Code
               </a>
             </div>
           </div>
