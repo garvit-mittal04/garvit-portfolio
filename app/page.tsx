@@ -50,6 +50,19 @@ const SKILL_ICONS = [
 
 const experienceData = [
   {
+    role: "AI Evaluation & Harness Engineer",
+    company: "StatusNeo",
+    period: "Sep 2026 – Present",
+    badge: "Current",
+    points: [
+      "Design and build automated evaluation harnesses for KARMA's AI flows, with golden datasets and scoring pipelines covering accuracy, groundedness, and regression scenarios so every prompt or model change is tested before release.",
+      "Run regression and side-by-side evals across prompt, model, and pipeline versions, catching quality drops before they reach production and replacing ad hoc manual review with a repeatable pass/fail baseline.",
+      "Implement rubric-based LLM-as-judge scoring calibrated against human labels, and build observability (traces, latency, cost, failure tagging) that speeds up root-cause analysis of bad outputs.",
+      "Analyze recruitment funnel data across sourcing, screening, and interview-to-offer stages, building reporting that surfaces bottlenecks and supports data-driven hiring decisions.",
+      "Own release QA sign-off for AI features using eval results as release gates, and maintain documentation for harness usage, metric definitions, and test coverage.",
+    ],
+  },
+  {
     role: "Operations Analyst Intern",
     company: "The Chicago School",
     period: "Jun 2026 – August 2026",
@@ -248,6 +261,7 @@ const skillsData = {
     "R", "Excel (PivotTables, Power Query, VBA)", "Power Automate", "ETL & Data Cleaning",
     "Facebook Prophet", "SHAP Explainability",
     "LLM Agents (Gemini, Groq)", "Prompt Engineering", "Process Mining",
+    "LLM Evaluation & Eval Harnesses", "LLM-as-Judge", "LLM Observability",
   ],
   "BI & Visualization": [
     "Power BI (DAX)", "Tableau", "KPI Dashboards", "Data Storytelling",
@@ -576,7 +590,7 @@ function ExperienceSection() {
       <SectionHeader
         eyebrow="Experience"
         title="Work that created business value"
-        subtitle="Experience across university operations, retail analytics, food manufacturing, finance, and business-facing analytical support."
+        subtitle="Experience across AI evaluation, university operations, retail analytics, food manufacturing, finance, and business-facing analytical support."
       />
       <motion.div
         ref={ref}
