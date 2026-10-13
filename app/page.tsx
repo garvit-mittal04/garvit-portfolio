@@ -93,7 +93,7 @@ const experienceData = [
     points: [
       "Queried and analyzed 20,000+ procurement, production, and export records in SQL and Excel, surfacing supplier pricing gaps and cost variances that directly informed sourcing decisions and operational reviews.",
       "Built a regression-based demand forecasting model trained on 12 months of sales and procurement data, improving inventory planning accuracy by 15% and reducing overstock and stockout risk.",
-      "Developed Power BI dashboards tracking cost drivers, contribution margins, and supply chain KPIs — replacing manual Excel reviews and giving leadership real-time visibility into product-level and operational performance.",
+      "Developed Power BI dashboards tracking cost drivers, contribution margins, and supply chain KPIs - replacing manual Excel reviews and giving leadership real-time visibility into product-level and operational performance.",
       "Automated vendor payment and AR reconciliation workflows using Excel Power Query and VBA, cutting monthly close cycle time by 25% and eliminating manual errors across finance and operations teams.",
     ],
   },
@@ -114,7 +114,7 @@ const flagshipProject = {
   title: "ML-Powered Warehouse Decision System",
   subtitle: "Flagship Project · Python · scikit-learn · Random Forest · SQL · R · SHAP · Streamlit",
   description:
-    "A production ML decision system on 53,000 warehouse records combining Random Forest throughput prediction (R²=0.934), risk classification (91.7% accuracy), Facebook Prophet 30-day demand forecasting, and XGBoost disruption risk scoring — backed by a normalized 5-table MySQL schema and a 5-tab Streamlit decision app.",
+    "A production ML decision system on 53,000 warehouse records combining Random Forest throughput prediction (R²=0.934), risk classification (91.7% accuracy), Facebook Prophet 30-day demand forecasting, and XGBoost disruption risk scoring - backed by a normalized 5-table MySQL schema and a 5-tab Streamlit decision app.",
   highlights: [
     { label: "Throughput model R²", value: "0.934" },
     { label: "Risk classifier accuracy", value: "91.7%" },
@@ -122,12 +122,12 @@ const flagshipProject = {
     { label: "Projected annual savings", value: "$840K+" },
   ],
   bullets: [
-    "Built a production ML decision system on 53,000 warehouse records using Random Forest (R²=0.934, 91.7% risk classification accuracy), Facebook Prophet for 30-day demand forecasting, and XGBoost for disruption risk scoring — backed by a normalized 5-table MySQL schema.",
+    "Built a production ML decision system on 53,000 warehouse records using Random Forest (R²=0.934, 91.7% risk classification accuracy), Facebook Prophet for 30-day demand forecasting, and XGBoost for disruption risk scoring - backed by a normalized 5-table MySQL schema.",
     "Applied SHAP explainability to quantify disruption cost at $2,286/hour and confirm an 89% morning-vs-night throughput gap via 6 statistical hypothesis tests in R; delivered staffing and SLA recommendations projecting $840K+ in annual savings.",
     "Designed a 5-tab Streamlit app: Overview (live KPIs), A/B Comparison (side-by-side scenario radar), What-If Optimizer (81-combination grid search heatmap), Model Intelligence (SHAP feature importance), and Export Reports.",
     "Built a What-If Optimizer searching all combinations of staff hours (4–12) and disruption hours (0–8) to find the cheapest configuration meeting a user-defined throughput target and budget.",
     "Generated a multi-sheet openpyxl Excel dashboard with live Scenario Prediction sheet (KPI table, feature impact table, embedded bar chart) and a one-page reportlab PDF executive summary with automated recommendations.",
-    "Optimized performance using Streamlit caching — prediction loop, optimizer grid, and Excel reads are cached so tab switching and slider changes respond near-instantly after first load.",
+    "Optimized performance using Streamlit caching - prediction loop, optimizer grid, and Excel reads are cached so tab switching and slider changes respond near-instantly after first load.",
   ],
   github: "https://github.com/garvit-mittal04/warehouse-decision-system",
   liveApp: "https://warehouse-garvit.streamlit.app",
@@ -137,7 +137,7 @@ const fpaProject = {
   title: "FP&A AI Analyst Agent",
   subtitle: "Finance AI · Python · SQL · Scikit-learn · Groq LLM · Streamlit",
   description:
-    "An end-to-end FP&A automation pipeline replacing 2–5 days of manual variance analysis with a sub-2-minute workflow. Uses a SQLite CTE-based variance engine with full outer join emulation, Isolation Forest anomaly detection (41 anomalies across 408 records), and Groq LLM for board-ready management commentary — shipped with a 15-test validation suite.",
+    "An end-to-end FP&A automation pipeline replacing 2–5 days of manual variance analysis with a sub-2-minute workflow. Uses a SQLite CTE-based variance engine with full outer join emulation, Isolation Forest anomaly detection (41 anomalies across 408 records), and Groq LLM for board-ready management commentary - shipped with a 15-test validation suite.",
   highlights: [
     { label: "Analysis time reduced", value: "2–5 days → <2 min" },
     { label: "Anomalies detected", value: "41 / 408 records" },
@@ -145,12 +145,12 @@ const fpaProject = {
     { label: "Records scalable to", value: "10,000+" },
   ],
   bullets: [
-    "Engineered an end-to-end FP&A automation pipeline replacing 2–5 days of manual variance analysis with a sub-2-minute workflow — using a SQLite CTE-based variance engine with full outer join emulation to prevent budget-only row loss.",
+    "Engineered an end-to-end FP&A automation pipeline replacing 2–5 days of manual variance analysis with a sub-2-minute workflow - using a SQLite CTE-based variance engine with full outer join emulation to prevent budget-only row loss.",
     "Detected 41 anomalies across 408 financial records using Isolation Forest with adaptive contamination scaling; integrated Groq LLM to auto-generate board-ready management commentary with rule-based fallback.",
-    "Shipped with a 15-test validation suite covering variance math, data integrity, and anomaly detection correctness — ensuring production-grade reliability.",
+    "Shipped with a 15-test validation suite covering variance math, data integrity, and anomaly detection correctness - ensuring production-grade reliability.",
     "Built a formatted 3-sheet Excel export (Executive Summary, Variance Detail, AI Commentary) and deployed the full system as a live Streamlit app with sample data preloaded.",
-    "Implemented FULL OUTER JOIN-style logic via UNION of keys so budget-only and actual-only records are preserved — not dropped — in analysis.",
-    "Inspired by hands-on experience analyzing 20,000+ financial records at Harsiddhi Foods — this project is the AI-powered version of that manual workflow.",
+    "Implemented FULL OUTER JOIN-style logic via UNION of keys so budget-only and actual-only records are preserved - not dropped - in analysis.",
+    "Inspired by hands-on experience analyzing 20,000+ financial records at Harsiddhi Foods - this project is the AI-powered version of that manual workflow.",
   ],
   github: "https://github.com/garvit-mittal04/fpa-ai-agent",
   liveApp: "https://fpa-ai-agent-garvit.streamlit.app",
@@ -439,7 +439,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             transition={{ duration: 0.5 }}
             className="mt-6 text-sm uppercase tracking-[0.22em] text-gray-500"
           >
-            Business Analytics · Operations · Supply Chain · BI
+            AI Evaluation · Business Analytics · Operations · BI
           </motion.p>
 
           <motion.h1
@@ -448,7 +448,7 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             transition={{ duration: 0.6 }}
             className="mt-5 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
           >
-            From data to decisions —
+            From data to decisions -
             <span className="block bg-gradient-to-r from-indigo-300 via-violet-300 to-purple-300 bg-clip-text text-transparent">
               driving business outcomes through analytics.
             </span>
@@ -460,9 +460,9 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             transition={{ duration: 0.7 }}
             className="mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg"
           >
-            I&apos;m Garvit Mittal — a Business Analytics &amp; AI graduate student building forecasting,
-            reporting, and decision-support systems that improve business performance across operations,
-            supply chain, and finance.
+            I&apos;m Garvit Mittal - an AI Evaluation &amp; Harness Engineer at StatusNeo and a Business
+            Analytics &amp; AI graduate student, building evaluation harnesses, forecasting, and
+            decision-support systems across AI, operations, supply chain, and finance.
           </motion.p>
 
           <motion.p
@@ -471,8 +471,9 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             transition={{ duration: 0.78 }}
             className="mt-5 max-w-3xl text-base leading-8 text-gray-300"
           >
-            My strongest work combines SQL, Python, BI tools, and machine learning
-            to solve real business problems — not just build technical demos.
+            My strongest work combines SQL, Python, BI tools, machine learning, and LLMs
+            to solve real business problems, and proves they work with tests and evals
+            instead of stopping at a demo.
           </motion.p>
 
         </div>
@@ -530,9 +531,9 @@ function AboutSection() {
         </div>
         <motion.div variants={staggerContainer} className="space-y-5 leading-8 text-gray-300">
           {[
-            "My background in finance, business analysis, and operations shapes how I approach data problems. I focus on building analytics that improve planning, cost visibility, forecasting quality, and business execution.",
-            "Across my work, I've automated workflows freeing 5–10 hours/week of staff capacity per department, improved forecast accuracy by 15–20%, analyzed 20,000+ operational records to uncover cost and supplier insights, and cut monthly close time by 25%.",
-            "I'm especially interested in business analytics, operations, supply chain, and BI roles where analytical work directly influences planning, performance, and decision-making. My long-term goal is to build systems that move teams from reactive reporting to structured, forward-looking action.",
+            "My background in finance, business analysis, and operations shapes how I approach data and AI problems. I build systems that improve planning, cost visibility, and forecasting quality, and I hold AI outputs to the same standard as any other analysis: measured against ground truth before anyone relies on them.",
+            "Today I build evaluation harnesses, LLM-as-judge scoring, and observability for AI flows at StatusNeo. Before that, I automated HR onboarding for 1,000+ hires a month (cutting processing time by ~90%), improved forecast accuracy by 15–20%, analyzed 20,000+ operational records for cost and supplier insights, and cut monthly close time by 25%. In my own projects I test AI the same way: Process X-Ray is checked by a known-answer test suite against a ground-truth event log, and reports openly where the model falls short.",
+            "I'm interested in roles where analytics and AI directly shape decisions, across AI evaluation, business analytics, operations, and BI. My long-term goal is to build systems that move teams from reactive reporting to structured, forward-looking action, with AI they can trust.",
           ].map((text, i) => (
             <motion.p key={i} custom={i} variants={fadeUp}>{text}</motion.p>
           ))}
@@ -896,9 +897,9 @@ function ProjectsSection() {
             <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
               <div className="grid gap-5 md:grid-cols-3">
                 {[
-                  { label: "Problem", text: "Warehouse teams make staffing and scheduling decisions without forward-looking signals — disruptions are noticed late, costs escalate reactively, and throughput variation across shifts goes unexplained." },
+                  { label: "Problem", text: "Warehouse teams make staffing and scheduling decisions without forward-looking signals - disruptions are noticed late, costs escalate reactively, and throughput variation across shifts goes unexplained." },
                   { label: "Approach", text: "Trained Random Forest models on 53,000 warehouse records for throughput prediction and risk classification, with Facebook Prophet for 30-day demand forecasting, XGBoost for disruption scoring, SHAP explainability, and 6 statistical hypothesis tests in R." },
-                  { label: "Outcome", text: "A live decision system with R²=0.934 throughput prediction, 91.7% risk accuracy, $2,286/hour disruption cost quantified, and staffing/SLA recommendations projecting $840K+ in annual savings — deployed on Streamlit Cloud." },
+                  { label: "Outcome", text: "A live decision system with R²=0.934 throughput prediction, 91.7% risk accuracy, $2,286/hour disruption cost quantified, and staffing/SLA recommendations projecting $840K+ in annual savings - deployed on Streamlit Cloud." },
                 ].map((block) => (
                   <div key={block.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                     <p className="text-sm uppercase tracking-[0.18em] text-indigo-400">{block.label}</p>
@@ -980,7 +981,7 @@ function ProjectsSection() {
             <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
               <div className="grid gap-5 md:grid-cols-3">
                 {[
-                  { label: "Problem", text: "Finance teams spend 2–5 days every month-end manually comparing actuals to budget in Excel, writing variance commentary, and sending reports to leadership — a repetitive and error-prone process." },
+                  { label: "Problem", text: "Finance teams spend 2–5 days every month-end manually comparing actuals to budget in Excel, writing variance commentary, and sending reports to leadership - a repetitive and error-prone process." },
                   { label: "Approach", text: "Built a full pipeline using SQL CTEs for variance analysis with full outer join emulation, Isolation Forest adaptive anomaly detection, and a Groq LLM prompt chain to generate structured management commentary automatically." },
                   { label: "Outcome", text: "End-to-end FP&A automation: 2–5 days → under 2 minutes. 41 anomalies detected across 408 records. 15-test validation suite. Board-ready AI commentary. Live Streamlit deployment with sample data preloaded." },
                 ].map((block) => (
@@ -1150,9 +1151,8 @@ function ContactSection() {
           Let&apos;s connect
         </h2>
         <p className="mt-5 max-w-3xl leading-8 text-gray-300">
-          I&apos;m actively interested in business analytics, operations, supply chain, BI, and
-          data-focused roles where analytical work can directly improve planning, performance,
-          and business decisions.
+          I&apos;m interested in AI evaluation, business analytics, operations, and BI roles where
+          analytics and AI can directly improve planning, performance, and business decisions.
         </p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {[
