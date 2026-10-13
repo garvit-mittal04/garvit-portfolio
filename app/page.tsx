@@ -433,19 +433,6 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             MS Business Analytics &amp; AI · UT Dallas (Remote)
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="ml-0 mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300 sm:ml-3 sm:mt-0"
-          >
-            <span className="relative flex h-2 w-2" aria-hidden="true">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Current · AI Evaluation &amp; Harness Engineer @ StatusNeo
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
