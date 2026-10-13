@@ -528,6 +528,22 @@ function AboutSection() {
         <div>
           <motion.p variants={fadeUp} className="text-sm uppercase tracking-[0.22em] text-indigo-400">About</motion.p>
           <motion.h2 variants={fadeUp} className="mt-3 text-3xl font-semibold md:text-4xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">My approach</motion.h2>
+          <motion.div
+            variants={fadeUp}
+            className="relative mt-8 aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[28px] border border-white/10 shadow-2xl shadow-indigo-500/10"
+          >
+            <img
+              src="/garvit.png"
+              alt="Garvit Mittal"
+              className="h-full w-full object-cover object-[50%_25%] grayscale-[15%]"
+            />
+            <div
+              className="pointer-events-none absolute inset-0"
+              aria-hidden="true"
+              style={{ background: "linear-gradient(180deg, rgba(3,3,3,0) 55%, rgba(3,3,3,0.55) 100%), radial-gradient(120% 90% at 50% 30%, transparent 60%, rgba(3,3,3,0.35) 100%)" }}
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-inset ring-indigo-500/20" aria-hidden="true" />
+          </motion.div>
         </div>
         <motion.div variants={staggerContainer} className="space-y-5 leading-8 text-gray-300">
           {[
