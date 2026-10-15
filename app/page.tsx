@@ -42,6 +42,7 @@ const navLinks = [
 const TAB_ORDER = ["about", "education", "experience", "projects", "skills", "contact"];
 
 const SKILL_ICONS = [
+  <FlaskConical size={22} key="flask" />,
   <BrainCircuit size={22} key="brain" />,
   <Database size={22} key="database" />,
   <FileBarChart size={22} key="filechart" />,
@@ -274,6 +275,13 @@ const projectData = [
 ];
 
 const skillsData = {
+  "AI Evaluation & LLM Systems": [
+    "LLM Evaluation & Eval Harnesses", "LLM-as-Judge", "LLM Observability",
+    "Benchmark Design & Labelled Datasets", "Precision / Recall / F1",
+    "Regression Testing in CI (GitHub Actions)", "pytest",
+    "AI Output Validation & Guardrails", "Anthropic API (Claude)",
+    "LLM Agents (Gemini, Groq)", "Prompt Engineering",
+  ],
   "Analytics & Modeling": [
     "Forecasting & Regression", "Classification", "A/B Testing", "Anomaly Detection",
     "Statistical Hypothesis Testing", "Machine Learning (XGBoost, Random Forest, Isolation Forest)",
@@ -283,8 +291,7 @@ const skillsData = {
     "SQL (Joins, CTEs, Window Functions, Stored Procedures)", "Python (Pandas, NumPy, Scikit-learn)",
     "R", "Excel (PivotTables, Power Query, VBA)", "Power Automate", "ETL & Data Cleaning",
     "Facebook Prophet", "SHAP Explainability",
-    "LLM Agents (Gemini, Groq)", "Prompt Engineering", "Process Mining",
-    "LLM Evaluation & Eval Harnesses", "LLM-as-Judge", "LLM Observability",
+    "Process Mining",
   ],
   "BI & Visualization": [
     "Power BI (DAX)", "Tableau", "KPI Dashboards", "Data Storytelling",
@@ -1224,8 +1231,8 @@ function SkillsSection() {
         variants={staggerContainer}
         className="grid gap-6 lg:grid-cols-2"
       >
-        {Object.entries(skillsData).map(([category, skills], index) => (
-          <TiltCard key={category} className="rounded-[24px] border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+        {Object.entries(skillsData).map(([category, skills], index, all) => (
+          <TiltCard key={category} className={`rounded-[24px] border border-white/10 bg-white/[0.03] backdrop-blur-sm${all.length % 2 === 1 && index === all.length - 1 ? " lg:col-span-2" : ""}`}>
             <motion.div custom={index} variants={fadeUp} className="p-6">
               <div className="flex items-center gap-3">
                 <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/10 p-3 text-indigo-300" aria-hidden="true">
