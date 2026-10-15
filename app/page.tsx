@@ -112,7 +112,7 @@ const experienceData = [
 
 const flagshipProject = {
   title: "ML-Powered Warehouse Decision System",
-  subtitle: "Flagship Project · Python · scikit-learn · Random Forest · SQL · R · SHAP · Streamlit",
+  subtitle: "Operations ML · Python · scikit-learn · Random Forest · SQL · R · SHAP · Streamlit",
   description:
     "A production ML decision system on 53,000 warehouse records combining Random Forest throughput prediction (R²=0.934), risk classification (91.7% accuracy), Facebook Prophet 30-day demand forecasting, and XGBoost disruption risk scoring - backed by a normalized 5-table MySQL schema and a 5-tab Streamlit decision app.",
   highlights: [
@@ -177,6 +177,29 @@ const processXrayProject = {
   ],
   github: "https://github.com/garvit-mittal04/process-xray",
   liveApp: "https://process-xray.streamlit.app",
+};
+
+const opsresolveProject = {
+  title: "OpsResolve AI",
+  subtitle: "AI Evaluation · Python · Decimal Rules Engine · Anthropic API · Streamlit · pytest · GitHub Actions",
+  description:
+    "An operations exception investigator that matches purchase orders, supplier invoices and goods receipts, flags 9 types of discrepancy with exact amounts and the source rows behind them, and tests candidate explanations against the records. AI only explains a finding and never calculates; every answer is checked by a deterministic validator before it is shown, and the whole engine is scored against a hand-labelled benchmark in CI.",
+  highlights: [
+    { label: "Benchmark F1", value: "0.986" },
+    { label: "Precision / Recall", value: "1.000 / 0.973" },
+    { label: "Exact amounts", value: "36 / 36" },
+    { label: "Automated tests", value: "1,152" },
+  ],
+  bullets: [
+    "Built a deterministic three-way match engine for purchase orders, supplier invoices and goods receipts that detects 9 exception types with exact Decimal arithmetic, severity, amount impact and the file and line of every source row.",
+    "Evaluated it against a hand-labelled 36-scenario benchmark (precision 1.000, recall 0.973, F1 0.986, exact amounts on 36/36 matches) and pinned the scores in CI, so any change in detection fails the build until reviewed. The one miss (S36) is documented as a known limitation.",
+    "Added optional, advisory AI explanations that never calculate: each answer is checked by a deterministic validator (citations, identifiers, numbers, signs, dates, supplier names) and rejected with problem codes if it doesn't match the evidence.",
+    "Protected data sent to the model: supplier IDs are pseudonymised, names and descriptions are never sent, and a privacy guard blocks the request if any real identifier remains.",
+    "Built 5 deterministic investigation checks (receipt not posted, unit mix-up, mistyped PO number, document under another PO, price from another order) that label each explanation consistent, contradicted or can't-be-checked, never a confirmed cause.",
+    "Shipped a CLI, a localhost-only Streamlit app and a locked-down public demo (synthetic data only, no uploads, no AI), covered by 1,152 automated tests including Streamlit UI tests and formula-injection-safe CSV exports.",
+  ],
+  github: "https://github.com/garvit-mittal04/opsresolve-ai",
+  liveApp: "https://opsresolve-ai.streamlit.app",
 };
 
 const challengeProject = {
@@ -651,6 +674,7 @@ function ExperienceSection() {
 }
 
 function ProjectsSection() {
+  const { ref: refOps, isInView: inViewOps } = useScrollReveal();
   const { ref: ref0, isInView: inView0 } = useScrollReveal();
   const { ref: refChallenge, isInView: inViewChallenge } = useScrollReveal();
   const { ref: ref1, isInView: inView1 } = useScrollReveal();
@@ -665,7 +689,109 @@ function ProjectsSection() {
         subtitle="Production-grade systems built around business problems, measurable outcomes, and usable decision tools."
       />
 
-      {/* ── Process X-Ray (latest) ── */}
+      {/* ── OpsResolve AI (flagship) ── */}
+      <motion.div
+        ref={refOps}
+        initial={{ opacity: 0, y: 28 }}
+        animate={inViewOps ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="mb-8"
+      >
+        <TiltCard className="rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-2xl"
+          style={{ background: "linear-gradient(135deg, rgba(20,184,166,0.07) 0%, rgba(0,0,0,0.5) 100%)" } as React.CSSProperties}>
+          <div className="p-8">
+            <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+              <span className="rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-teal-300">Flagship Project</span>
+              <span className="rounded-full border border-white/10 px-3 py-1">AI Evaluation</span>
+              <span className="rounded-full border border-white/10 px-3 py-1">Finance Operations</span>
+              <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300">Live Demo</span>
+            </div>
+            <div className="mt-5 flex items-start gap-4">
+              <div className="rounded-2xl border border-teal-500/20 bg-teal-500/10 p-3 text-teal-300" aria-hidden="true">
+                <FlaskConical size={24} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  {opsresolveProject.title}
+                </h3>
+                <p className="mt-2 text-sm text-gray-400">{opsresolveProject.subtitle}</p>
+              </div>
+            </div>
+            <p className="mt-6 max-w-4xl text-base leading-8 text-gray-300">{opsresolveProject.description}</p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {opsresolveProject.highlights.map((item) => (
+                <div key={item.label}
+                  className="rounded-2xl border border-teal-500/20 bg-teal-500/5 p-4 transition hover:border-teal-500/40 hover:bg-teal-500/10">
+                  <p className="text-sm text-gray-500">{item.label}</p>
+                  <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
+              <div className="grid gap-5 md:grid-cols-3">
+                {[
+                  { label: "Problem", text: "Before paying a supplier, finance teams match each invoice to its purchase order and to the goods actually received. Quantity, price, unit and duplicate-bill mismatches are found by hand across spreadsheets, and AI tools that 'reconcile' can't show how they got a number." },
+                  { label: "Approach", text: "Every match and amount is rule-based Python with exact decimal arithmetic and cited source rows. Investigation checks test possible explanations against the records, and optional AI only explains a finding, with every answer validated against the evidence before it is shown." },
+                  { label: "Outcome", text: "On a hand-labelled 36-scenario benchmark: 36 of 37 expected exceptions found, no false alarms, every amount exact. Built and tested on synthetic data only, and the repo says so: it has not yet been validated on real supplier data." },
+                ].map((block) => (
+                  <div key={block.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                    <p className="text-sm uppercase tracking-[0.18em] text-teal-400">{block.label}</p>
+                    <p className="mt-3 leading-7 text-gray-300">{block.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10">
+              <img src="/opsresolve.png"
+                alt="OpsResolve public demo: 62 rows read, 3 validation issues and 18 exceptions by severity"
+                className="w-full" />
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {opsresolveProject.bullets.map((bullet, index) => (
+                <div key={index}
+                  className="rounded-2xl border border-white/10 bg-black/30 p-4 transition hover:border-teal-500/20 hover:bg-teal-500/5">
+                  <p className="leading-7 text-gray-300">{bullet}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-[24px] border border-white/10 bg-black/30 p-6">
+              <p className="text-sm uppercase tracking-[0.18em] text-teal-400">Key Differentiators</p>
+              <div className="mt-4 grid gap-3 md:grid-cols-3">
+                {[
+                  "Measured, not claimed: precision, recall and F1 on a labelled benchmark, pinned in CI",
+                  "AI explains, code calculates, and a validator checks every answer",
+                  "Limitations and the one known miss are documented, not hidden",
+                ].map((text) => (
+                  <div key={text} className="flex gap-3 rounded-2xl border border-teal-500/20 bg-teal-500/5 p-4 text-gray-300">
+                    <ShieldCheck size={16} className="shrink-0 mt-0.5 text-teal-400" />
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href={opsresolveProject.liveApp} target="_blank" rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 px-5 py-3 font-medium text-white shadow-lg shadow-teal-500/25 transition hover:scale-[1.02] hover:shadow-teal-500/40">
+                <Globe size={16} aria-hidden="true" />
+                Launch Live Demo
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </a>
+              <a href={opsresolveProject.github} target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-medium text-gray-200 transition hover:bg-white/10">
+                <ExternalLink size={16} aria-hidden="true" /> View Code
+              </a>
+            </div>
+          </div>
+        </TiltCard>
+      </motion.div>
+
+      {/* ── Process X-Ray ── */}
       <motion.div
         ref={ref0}
         initial={{ opacity: 0, y: 28 }}
@@ -677,7 +803,7 @@ function ProjectsSection() {
           style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.06) 0%, rgba(0,0,0,0.5) 100%)" } as React.CSSProperties}>
           <div className="p-8">
             <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
-              <span className="rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 text-sky-300">Latest Project</span>
+              <span className="rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 text-sky-300">Known-Answer Tested</span>
               <span className="rounded-full border border-white/10 px-3 py-1">Multi-Agent AI</span>
               <span className="rounded-full border border-white/10 px-3 py-1">Process Mining</span>
               <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300">Live App</span>
@@ -883,7 +1009,7 @@ function ProjectsSection() {
           style={{ background: "linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(0,0,0,0.5) 100%)" } as React.CSSProperties}>
           <div className="p-8">
             <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-gray-500">
-              <span className="rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-indigo-300">Flagship Project</span>
+              <span className="rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-indigo-300">Machine Learning</span>
               <span className="rounded-full border border-white/10 px-3 py-1">Operations Analytics</span>
               <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300">Live App</span>
             </div>
@@ -1191,7 +1317,7 @@ function ContactSection() {
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2">
             <MapPin size={14} aria-hidden="true" /> Chandigarh, India
           </div>
-          <a href={flagshipProject.github} target="_blank" rel="noreferrer"
+          <a href="https://github.com/garvit-mittal04" target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:border-indigo-500/30 hover:bg-indigo-500/5 hover:text-indigo-300">
             <ExternalLink size={14} aria-hidden="true" /> View GitHub
           </a>
