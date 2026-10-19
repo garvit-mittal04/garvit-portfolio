@@ -56,22 +56,22 @@ const experienceData = [
     period: "Sep 2026 – Present",
     badge: "Current",
     points: [
-      "Design and build automated evaluation harnesses for KARMA's AI flows, with golden datasets and scoring pipelines covering accuracy, groundedness, and regression scenarios so every prompt or model change is tested before release.",
-      "Run regression and side-by-side evals across prompt, model, and pipeline versions, catching quality drops before they reach production and replacing ad hoc manual review with a repeatable pass/fail baseline.",
-      "Implement rubric-based LLM-as-judge scoring calibrated against human labels, and build observability (traces, latency, cost, failure tagging) that speeds up root-cause analysis of bad outputs.",
-      "Analyze recruitment funnel data across sourcing, screening, and interview-to-offer stages, building reporting that surfaces bottlenecks and supports data-driven hiring decisions.",
-      "Own release QA sign-off for AI features using eval results as release gates, and maintain documentation for harness usage, metric definitions, and test coverage.",
+      "Expanded automated follow-ups in KARMA, StatusNeo's in-house applicant tracking system, from 1 reminder type (interviewer feedback) to 6 across 3 stakeholder groups (customers, candidates, interview panels), shipping 5 workflow automations.",
+      "Shipped customer self-scheduling where each slot reply books the interview or escalates to the recruiter, plus customer feedback capture that stores feedback on the candidate record and notifies the recruiter.",
+      "Built candidate non-reply nudges for 3 drop-off points (slots not chosen, assessment link unopened, AI interview not taken) with configurable cadence and an automatic stop after N attempts, plus once-per-interview panel reminders.",
+      "Build evaluation harnesses for KARMA's AI flows and develop LLM-as-judge scoring and observability for their outputs.",
+      "Support release QA and documentation for AI features, and analyze recruitment process data.",
     ],
   },
   {
     role: "Operations Analyst Intern",
     company: "The Chicago School",
-    period: "Jun 2026 – August 2026",
+    period: "Jun 2026 – Aug 2026",
     badge: null,
     points: [
-      "Architected and deployed 7 production Power Automate flows across SharePoint Lists (28 and 23 tracked fields), automating onboarding for 1000+ new hires/month and eliminating single-point-of-failure dependency on 1 HR staff member.",
+      "Architected and deployed 7 production Power Automate flows across SharePoint Lists (28 and 23 tracked fields), automating onboarding for 1,000+ onboarding cases/month and eliminating single-point-of-failure dependency on 1 HR staff member.",
       "Engineered multi-branch conditional logic across employee type, rehire status, location, and I-9 compliance stage to dynamically route 12 email templates, cutting onboarding processing time by ~90%.",
-      "Automated I-9 compliance tracking, document-chase escalation, and completion notifications on daily scheduled triggers with 3-day recurring cycles, removing manual monitoring from HR's workflow entirely.",
+      "Automated I-9 compliance tracking, document-chase escalation, and completion notifications on daily scheduled triggers with 3-day recurring cycles, replacing manual monitoring by HR.",
       "Delivered automated Microsoft Teams provisioning across 5 campus-specific channels and authored full system documentation and maintenance ownership handoff for the live production system.",
     ],
   },
@@ -95,7 +95,7 @@ const experienceData = [
       "Queried and analyzed 20,000+ procurement, production, and export records in SQL and Excel, surfacing supplier pricing gaps and cost variances that directly informed sourcing decisions and operational reviews.",
       "Built a regression-based demand forecasting model trained on 12 months of sales and procurement data, improving inventory planning accuracy by 15% and reducing overstock and stockout risk.",
       "Developed Power BI dashboards tracking cost drivers, contribution margins, and supply chain KPIs - replacing manual Excel reviews and giving leadership real-time visibility into product-level and operational performance.",
-      "Automated vendor payment and AR reconciliation workflows using Excel Power Query and VBA, cutting monthly close cycle time by 25% and eliminating manual errors across finance and operations teams.",
+      "Automated vendor payment and AR reconciliation workflows using Excel Power Query and VBA, cutting monthly reporting time by 25% and reducing manual errors across finance and operations teams.",
     ],
   },
   {
@@ -115,16 +115,16 @@ const flagshipProject = {
   title: "ML-Powered Warehouse Decision System",
   subtitle: "Operations ML · Python · scikit-learn · Random Forest · SQL · R · SHAP · Streamlit",
   description:
-    "A production ML decision system on 53,000 warehouse records combining Random Forest throughput prediction (R²=0.934), risk classification (91.7% accuracy), Facebook Prophet 30-day demand forecasting, and XGBoost disruption risk scoring - backed by a normalized 5-table MySQL schema and a 5-tab Streamlit decision app.",
+    "A warehouse decision-support app built on 1,200 simulated shift-level records: Random Forest models for throughput (R²=0.934, 0.931 cross-validated) and operational risk (91.7% accuracy), a What-If optimizer over 81 staffing and disruption scenarios, SQL over a 5-table MySQL schema, 6 statistical tests in R, and SHAP explainability, served in a 5-tab Streamlit app.",
   highlights: [
     { label: "Throughput model R²", value: "0.934" },
     { label: "Risk classifier accuracy", value: "91.7%" },
-    { label: "Disruption cost impact", value: "$2,286/hour" },
-    { label: "Projected annual savings", value: "$840K+" },
+    { label: "Scenarios searched by optimizer", value: "81" },
+    { label: "Statistical tests in R", value: "6" },
   ],
   bullets: [
-    "Built a production ML decision system on 53,000 warehouse records using Random Forest (R²=0.934, 91.7% risk classification accuracy), Facebook Prophet for 30-day demand forecasting, and XGBoost for disruption risk scoring - backed by a normalized 5-table MySQL schema.",
-    "Applied SHAP explainability to quantify disruption cost at $2,286/hour and confirm an 89% morning-vs-night throughput gap via 6 statistical hypothesis tests in R; delivered staffing and SLA recommendations projecting $840K+ in annual savings.",
+    "Trained Random Forest models on 1,200 simulated shift-level records: throughput prediction (R²=0.934 on held-out data, 0.931 cross-validated) and Low/Medium/High risk classification (91.7% accuracy), with analytical SQL over a 5-table MySQL schema.",
+    "Ran 6 statistical tests in R (including ANOVA, correlation, and distribution tests) and used SHAP to show which inputs drive each model; disruption hours are the strongest driver of both throughput and risk.",
     "Designed a 5-tab Streamlit app: Overview (live KPIs), A/B Comparison (side-by-side scenario radar), What-If Optimizer (81-combination grid search heatmap), Model Intelligence (SHAP feature importance), and Export Reports.",
     "Built a What-If Optimizer searching all combinations of staff hours (4–12) and disruption hours (0–8) to find the cheapest configuration meeting a user-defined throughput target and budget.",
     "Generated a multi-sheet openpyxl Excel dashboard with live Scenario Prediction sheet (KPI table, feature impact table, embedded bar chart) and a one-page reportlab PDF executive summary with automated recommendations.",
@@ -138,20 +138,20 @@ const fpaProject = {
   title: "FP&A AI Analyst Agent",
   subtitle: "Finance AI · Python · SQL · Scikit-learn · Groq LLM · Streamlit",
   description:
-    "An end-to-end FP&A automation pipeline replacing 2–5 days of manual variance analysis with a sub-2-minute workflow. Uses a SQLite CTE-based variance engine with full outer join emulation, Isolation Forest anomaly detection (41 anomalies across 408 records), and Groq LLM for board-ready management commentary - shipped with a 15-test validation suite.",
+    "An FP&A automation pipeline that compares actuals to budget, flags unusual line items, and drafts management commentary in one run. Uses a SQLite CTE-based variance engine with full outer join emulation, Isolation Forest anomaly detection with a stability check, and Groq LLM commentary with a rule-based fallback - shipped with a 15-test validation suite.",
   highlights: [
-    { label: "Analysis time reduced", value: "2–5 days → <2 min" },
-    { label: "Anomalies detected", value: "41 / 408 records" },
-    { label: "Validation tests", value: "15-test suite" },
-    { label: "Records scalable to", value: "10,000+" },
+    { label: "Validation tests passing", value: "15 / 15" },
+    { label: "Anomalies flagged (sample)", value: "25 / 408 records" },
+    { label: "Budget-only rows lost", value: "0" },
+    { label: "Excel report", value: "3 sheets" },
   ],
   bullets: [
-    "Engineered an end-to-end FP&A automation pipeline replacing 2–5 days of manual variance analysis with a sub-2-minute workflow - using a SQLite CTE-based variance engine with full outer join emulation to prevent budget-only row loss.",
-    "Detected 41 anomalies across 408 financial records using Isolation Forest with adaptive contamination scaling; integrated Groq LLM to auto-generate board-ready management commentary with rule-based fallback.",
-    "Shipped with a 15-test validation suite covering variance math, data integrity, and anomaly detection correctness - ensuring production-grade reliability.",
+    "Engineered an end-to-end FP&A pipeline that turns actual and budget files into variance analysis, department summaries, rolling trends, and commentary in one run - using a SQLite CTE-based variance engine with full outer join emulation to prevent budget-only row loss.",
+    "Flagged 25 anomalies across 408 synthetic financial records using Isolation Forest with a stability check and adaptive contamination (stable data returns zero); integrated Groq LLM commentary with a rule-based fallback.",
+    "Shipped with a 15-test validation suite covering variance math, data integrity, and anomaly detection, all 15 passing.",
     "Built a formatted 3-sheet Excel export (Executive Summary, Variance Detail, AI Commentary) and deployed the full system as a live Streamlit app with sample data preloaded.",
     "Implemented FULL OUTER JOIN-style logic via UNION of keys so budget-only and actual-only records are preserved - not dropped - in analysis.",
-    "Inspired by hands-on experience analyzing 20,000+ financial records at Harsiddhi Foods - this project is the AI-powered version of that manual workflow.",
+    "Inspired by hands-on experience analyzing 20,000+ procurement and production records at Harsiddhi Foods - this project is the AI-powered version of that manual workflow.",
   ],
   github: "https://github.com/garvit-mittal04/fpa-ai-agent",
   liveApp: "https://fpa-ai-agent-garvit.streamlit.app",
@@ -169,7 +169,7 @@ const processXrayProject = {
     { label: "Cost to run", value: "₹0 (free tiers)" },
   ],
   bullets: [
-    "Built a 5-agent LLM pipeline (Mapper, Event-log Tracer, Analyst, Recommender, Devil's Advocate) that turns an unstructured, Hinglish WhatsApp export into a structured event log, tracing 32 interleaved orders across 536 messages.",
+    "Built a 5-agent LLM pipeline (Mapper, Event-log Tracer, Analyst, Recommender, Devil's Advocate) that turns an unstructured, Hinglish WhatsApp export into a structured event log, tested on a fictional two-month chat with 32 interleaved orders.",
     "Designed a counterfactual replay engine that re-runs real order timelines with automation rules applied, measuring waits in working hours instead of estimating savings with formulas.",
     "Caught an AI failure where the model claimed 237 h/week of savings by 'speeding up' customer payments; replaced prompt instructions with code-enforced guardrails so only waits an automation controls can be shortened.",
     "Engineered a free-tier resilience layer: Gemini → Groq fallback chain with per-minute vs daily quota cooldowns, adaptive token budgets, chunked processing of long chats, and per-visitor key isolation.",
@@ -312,10 +312,10 @@ const certifications = [
 ];
 
 const quickStats = [
-  { label: "Forecast Accuracy Lift", value: "15–20%", numericEnd: null, icon: <Target size={18} /> },
-  { label: "Warehouse Records Analyzed", value: "53,000+", numericEnd: 53000, icon: <Database size={18} /> },
-  { label: "Monthly Close Time Reduced", value: "25%", numericEnd: null, icon: <BarChart3 size={18} /> },
-  { label: "Projected Annual Savings", value: "$840K+", numericEnd: null, icon: <ShieldCheck size={18} /> },
+  { label: "Onboarding Processing Time Cut", value: "~90%", numericEnd: null, icon: <Zap size={18} /> },
+  { label: "Onboarding Cases Automated / Month", value: "1,000+", numericEnd: 1000, icon: <Database size={18} /> },
+  { label: "Forecast Accuracy Lift", value: "15–20%", numericEnd: null, icon: <TrendingUp size={18} /> },
+  { label: "Benchmark F1 (OpsResolve AI)", value: "0.986", numericEnd: null, icon: <FlaskConical size={18} /> },
 ];
 
 const educationData = [
@@ -478,9 +478,9 @@ function HeroSection({ onNav }: { onNav: (tab: string) => void }) {
             transition={{ duration: 0.6 }}
             className="mt-5 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl"
           >
-            From data to decisions -
+            From data to decisions,
             <span className="block bg-gradient-to-r from-indigo-300 via-violet-300 to-purple-300 bg-clip-text text-transparent">
-              driving business outcomes through analytics.
+              driving business outcomes through analytics and AI.
             </span>
           </motion.h1>
 
@@ -578,7 +578,7 @@ function AboutSection() {
         <motion.div variants={staggerContainer} className="space-y-5 leading-8 text-gray-300">
           {[
             "My background in finance, business analysis, and operations shapes how I approach data and AI problems. I build systems that improve planning, cost visibility, and forecasting quality, and I hold AI outputs to the same standard as any other analysis: measured against ground truth before anyone relies on them.",
-            "Today I build evaluation harnesses, LLM-as-judge scoring, and observability for AI flows at StatusNeo. Before that, I automated HR onboarding for 1,000+ hires a month (cutting processing time by ~90%), improved forecast accuracy by 15–20%, analyzed 20,000+ operational records for cost and supplier insights, and cut monthly close time by 25%. In my own projects I test AI the same way: Process X-Ray is checked by a known-answer test suite against a ground-truth event log, and reports openly where the model falls short.",
+            "Today at StatusNeo I build evaluation harnesses for AI flows and have shipped scheduling and follow-up automation in KARMA, its applicant tracking system. Before that, I automated HR onboarding for 1,000+ onboarding cases a month (cutting processing time by ~90%), improved forecast accuracy by 15–20%, analyzed 20,000+ operational records for cost and supplier insights, and cut monthly reporting time by 25%. In my own projects I test AI the same way: Process X-Ray is checked by a known-answer test suite against a ground-truth event log, and reports openly where the model falls short.",
             "I'm interested in roles where analytics and AI directly shape decisions, across AI evaluation, business analytics, operations, and BI. My long-term goal is to build systems that move teams from reactive reporting to structured, forward-looking action, with AI they can trust.",
           ].map((text, i) => (
             <motion.p key={i} custom={i} variants={fadeUp}>{text}</motion.p>
@@ -1047,8 +1047,8 @@ function ProjectsSection() {
               <div className="grid gap-5 md:grid-cols-3">
                 {[
                   { label: "Problem", text: "Warehouse teams make staffing and scheduling decisions without forward-looking signals - disruptions are noticed late, costs escalate reactively, and throughput variation across shifts goes unexplained." },
-                  { label: "Approach", text: "Trained Random Forest models on 53,000 warehouse records for throughput prediction and risk classification, with Facebook Prophet for 30-day demand forecasting, XGBoost for disruption scoring, SHAP explainability, and 6 statistical hypothesis tests in R." },
-                  { label: "Outcome", text: "A live decision system with R²=0.934 throughput prediction, 91.7% risk accuracy, $2,286/hour disruption cost quantified, and staffing/SLA recommendations projecting $840K+ in annual savings - deployed on Streamlit Cloud." },
+                  { label: "Approach", text: "Simulated 1,200 shift-level records from realistic patterns, trained Random Forest models for throughput and risk, explained them with SHAP, tested the patterns with 6 statistical tests in R, and prototyped 30-day demand forecasts with Prophet." },
+                  { label: "Outcome", text: "A live Streamlit app with R²=0.934 throughput prediction and 91.7% risk accuracy, where a planner compares scenarios and finds the cheapest staffing plan that meets a throughput target, using adjustable cost assumptions." },
                 ].map((block) => (
                   <div key={block.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                     <p className="text-sm uppercase tracking-[0.18em] text-indigo-400">{block.label}</p>
@@ -1130,9 +1130,9 @@ function ProjectsSection() {
             <div className="mt-6 rounded-[24px] border border-dashed border-white/15 bg-black/30 p-6">
               <div className="grid gap-5 md:grid-cols-3">
                 {[
-                  { label: "Problem", text: "Finance teams spend 2–5 days every month-end manually comparing actuals to budget in Excel, writing variance commentary, and sending reports to leadership - a repetitive and error-prone process." },
+                  { label: "Problem", text: "Month-end variance analysis is often done by hand in Excel: comparing actuals to budget, writing commentary, and sending reports to leadership - a repetitive and error-prone process." },
                   { label: "Approach", text: "Built a full pipeline using SQL CTEs for variance analysis with full outer join emulation, Isolation Forest adaptive anomaly detection, and a Groq LLM prompt chain to generate structured management commentary automatically." },
-                  { label: "Outcome", text: "End-to-end FP&A automation: 2–5 days → under 2 minutes. 41 anomalies detected across 408 records. 15-test validation suite. Board-ready AI commentary. Live Streamlit deployment with sample data preloaded." },
+                  { label: "Outcome", text: "Variance analysis, anomaly flags, and draft commentary in a single run. 25 anomalies flagged across 408 synthetic records. 15 of 15 tests passing. Live Streamlit app with sample data preloaded." },
                 ].map((block) => (
                   <div key={block.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                     <p className="text-sm uppercase tracking-[0.18em] text-violet-400">{block.label}</p>
